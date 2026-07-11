@@ -11,10 +11,6 @@ export default function Home() {
         <section className="hero" aria-labelledby="page-title">
           <div className="hero-kicker reveal reveal-1">
             <p>Personal index / 2026</p>
-            <p>
-              One person<br />
-              Five places
-            </p>
           </div>
 
           <h1 id="page-title" className="hero-title" aria-label="Sonny Proto">
@@ -70,7 +66,6 @@ export default function Home() {
       <footer className="site-footer">
         <div className="footer-topline">
           <p>Index complete</p>
-          <p>Five destinations</p>
           <a href="#top">Back to top ↑</a>
         </div>
         <p className="footer-handle">I prototype. I iterate.</p>
