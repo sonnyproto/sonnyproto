@@ -126,7 +126,7 @@ figure {
   align-items: start;
   background: var(--paper);
   display: grid;
-  grid-template-columns: minmax(330px, 0.76fr) minmax(0, 1.24fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   width: 100%;
 }
 
@@ -135,6 +135,7 @@ figure {
   flex-direction: column;
   height: 100svh;
   min-height: 0;
+  min-width: 0;
   overflow: clip;
   padding: calc(var(--header-height) + clamp(1.75rem, 3.5vh, 2.5rem))
     var(--page-pad) clamp(1.5rem, 3vh, 2rem);
@@ -275,9 +276,14 @@ figure {
 
 .links-section {
   background: transparent;
-  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  height: 100svh;
+  min-height: 0;
+  min-width: 0;
+  overflow: clip;
   padding: calc(var(--header-height) + clamp(1.75rem, 3.5vh, 2.5rem))
-    var(--page-pad) clamp(5rem, 8vw, 7rem);
+    var(--page-pad) clamp(1.25rem, 2.5vh, 2rem);
   position: relative;
   z-index: 10;
 }
@@ -297,11 +303,11 @@ figure {
 
 .section-heading h2 {
   font-family: var(--display);
-  font-size: clamp(4.5rem, 7vw, 7.5rem);
+  font-size: clamp(3.75rem, min(6vw, 9vh), 6.5rem);
   font-weight: 400;
   letter-spacing: -0.07em;
   line-height: 0.72;
-  margin-top: clamp(2.75rem, 4.5vw, 4.75rem);
+  margin-top: clamp(1.75rem, 3vh, 2.5rem);
   text-transform: uppercase;
 }
 
@@ -310,22 +316,27 @@ figure {
   color: var(--muted);
   font-size: clamp(0.9rem, 1.15vw, 1.1rem);
   line-height: 1.45;
-  margin-top: 1.5rem;
+  margin-top: clamp(0.75rem, 1.75vh, 1.25rem);
   width: min(14rem, 48%);
 }
 
 .social-directory {
   border-top: 1px solid var(--ink);
-  margin-top: clamp(3.25rem, 5vw, 5rem);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-top: clamp(1.5rem, 3vh, 2.5rem);
+  min-height: 0;
 }
 
 .social-row {
   align-items: center;
   border-bottom: 1px solid var(--ink);
   display: grid;
+  flex: 1;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   isolation: isolate;
-  min-height: clamp(6.75rem, 8vw, 8.25rem);
+  min-height: 0;
   overflow: hidden;
   position: relative;
   text-decoration: none;
@@ -352,11 +363,21 @@ figure {
 }
 
 .social-name {
+  align-items: center;
+  display: flex;
   font-family: var(--display);
   font-size: clamp(2.9rem, 4.2vw, 4.5rem);
+  gap: 0.28em;
   grid-column: 2 / 8;
   letter-spacing: -0.055em;
   line-height: 0.9;
+  min-width: 0;
+}
+
+.social-logo {
+  flex: 0 0 auto;
+  height: 0.46em;
+  width: 0.46em;
 }
 
 .social-meta {
@@ -601,6 +622,10 @@ figure {
   }
 
   .links-section {
+    display: block;
+    height: auto;
+    min-height: 100svh;
+    overflow: visible;
     padding-bottom: 5rem;
     padding-left: var(--page-pad);
     padding-right: var(--page-pad);
@@ -627,11 +652,13 @@ figure {
   }
 
   .social-directory {
+    display: block;
     margin-top: 2.5rem;
   }
 
   .social-row {
     align-content: center;
+    flex: none;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     min-height: 7.6rem;
     padding: 1.25rem 0;
