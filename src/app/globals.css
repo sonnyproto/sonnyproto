@@ -4,6 +4,7 @@
   --ink: #000000;
   --muted: rgba(0, 0, 0, 0.56);
   --line: rgba(0, 0, 0, 0.16);
+  --header-height: 76px;
   --page-pad: clamp(1.125rem, 2.65vw, 2.625rem);
   --column-pad: clamp(1.5rem, 5vw, 4rem);
   --display: "Bodoni 72", Didot, "Bodoni MT", "Times New Roman", serif;
@@ -64,7 +65,7 @@ figure {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   left: 0;
-  min-height: 76px;
+  min-height: var(--header-height);
   padding: 18px var(--page-pad) 15px;
   position: fixed;
   right: 0;
@@ -133,9 +134,10 @@ figure {
   display: flex;
   flex-direction: column;
   height: 100svh;
-  min-height: 720px;
-  overflow: hidden;
-  padding: 114px var(--page-pad) 30px;
+  min-height: 0;
+  overflow: clip;
+  padding: calc(var(--header-height) + clamp(1.75rem, 3.5vh, 2.5rem))
+    var(--page-pad) clamp(1.5rem, 3vh, 2rem);
   position: sticky;
   top: 0;
 }
@@ -166,7 +168,7 @@ figure {
   font-weight: 400;
   letter-spacing: -0.075em;
   line-height: 0.68;
-  padding: clamp(2.75rem, 5vh, 4.25rem) 0 clamp(2.25rem, 4vh, 3.5rem);
+  margin-top: clamp(2.5rem, 5vh, 3.75rem);
   position: relative;
   text-transform: uppercase;
   width: 100%;
@@ -189,9 +191,9 @@ figure {
 }
 
 .portrait-wrap {
-  margin: clamp(4.5rem, 7vw, 6.5rem) auto 0;
+  margin: clamp(1.75rem, 3.5vh, 2.5rem) auto 0;
   position: relative;
-  width: min(100%, 420px);
+  width: min(100%, 420px, max(220px, calc(100svh - 27rem)));
   z-index: 2;
 }
 
@@ -266,7 +268,7 @@ figure {
   font-size: clamp(1rem, 1.25vw, 1.2rem);
   line-height: 1.4;
   margin-top: auto;
-  padding-top: 1.5rem;
+  padding-top: clamp(0.75rem, 2vh, 1.25rem);
   position: relative;
   z-index: 5;
 }
@@ -274,7 +276,8 @@ figure {
 .links-section {
   background: transparent;
   min-height: 100svh;
-  padding: 114px var(--page-pad) clamp(5rem, 8vw, 7rem);
+  padding: calc(var(--header-height) + clamp(1.75rem, 3.5vh, 2.5rem))
+    var(--page-pad) clamp(5rem, 8vw, 7rem);
   position: relative;
   z-index: 10;
 }
@@ -521,6 +524,10 @@ figure {
 }
 
 @media (max-width: 720px) {
+  :root {
+    --header-height: 64px;
+  }
+
   body {
     background: var(--paper);
   }
@@ -555,7 +562,7 @@ figure {
     padding-bottom: 3.5rem;
     padding-left: var(--page-pad);
     padding-right: var(--page-pad);
-    padding-top: 92px;
+    padding-top: calc(var(--header-height) + 1.75rem);
     position: relative;
     top: auto;
   }
@@ -575,7 +582,8 @@ figure {
   .hero-title {
     font-size: clamp(4.9rem, 21vw, 7rem);
     line-height: 0.69;
-    padding: 3.5rem 0 2.75rem;
+    margin-top: 3.5rem;
+    padding: 0;
   }
 
   .title-line-bottom {
@@ -583,7 +591,7 @@ figure {
   }
 
   .portrait-wrap {
-    margin: 0;
+    margin: 2.75rem 0 0;
     position: relative;
     width: 100%;
   }
