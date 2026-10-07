@@ -36,8 +36,8 @@ unverified jobs, awards, follower counts, or ratings to the structured data.
 
 After deploying these changes:
 
-1. Enable **Always Use HTTPS** in Cloudflare under **SSL/TLS → Edge Certificates**.
-   HTTP currently serves the homepage rather than redirecting to HTTPS.
+1. Keep **Always Use HTTPS** enabled in Cloudflare under **SSL/TLS → Edge Certificates**.
+   Cloudflare handles the HTTP-to-HTTPS redirect before requests reach the app.
 2. Confirm the live homepage has the canonical tag and `/sitemap.xml` returns XML.
    Confirm `http://sonnyproto.com/` redirects to `https://sonnyproto.com/`.
 3. Submit `https://sonnyproto.com/sitemap.xml` in Google Search Console.
