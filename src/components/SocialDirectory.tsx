@@ -27,7 +27,7 @@ export function SocialDirectory() {
             className="social-row"
             href={link.href}
             key={link.name}
-            rel="noreferrer"
+            rel="me noreferrer"
             target="_blank"
             aria-label={`${link.name}, @sonnyproto (opens in a new tab)`}
           >

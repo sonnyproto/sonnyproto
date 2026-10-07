@@ -28,6 +28,12 @@ parameters. `/sitemap.xml` lists only this URL, and `/robots.txt` advertises the
 sitemap. Each future page should declare its own canonical URL in its page
 metadata and be added to the sitemap.
 
+Homepage metadata identifies both Sonny Proto and `@sonnyproto`. Open Graph and
+Twitter previews use the existing portrait. The homepage also includes
+`ProfilePage` / `Person` JSON-LD, with `sameAs` derived from the same five social
+links shown on the page. Keep profile claims factual and visible; do not add
+unverified jobs, awards, follower counts, or ratings to the structured data.
+
 After deploying these changes:
 
 1. Enable **Always Use HTTPS** in Cloudflare under **SSL/TLS → Edge Certificates**.

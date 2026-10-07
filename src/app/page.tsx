@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Header } from "@/components/Header";
 import { SocialDirectory } from "@/components/SocialDirectory";
-import { siteUrl } from "@/data/site";
+import { socialLinks } from "@/data/links";
+import { siteDescription, siteTitle, siteUrl } from "@/data/site";
 
 export const metadata: Metadata = {
   alternates: {
@@ -10,9 +11,33 @@ export const metadata: Metadata = {
   }
 };
 
+const profilePage = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": `${siteUrl}/#profile`,
+  url: siteUrl,
+  name: siteTitle,
+  description: siteDescription,
+  mainEntity: {
+    "@type": "Person",
+    "@id": `${siteUrl}/#person`,
+    name: "Sonny Proto",
+    alternateName: "sonnyproto",
+    url: siteUrl,
+    image: `${siteUrl}/me.png`,
+    sameAs: socialLinks.map((link) => link.href)
+  }
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(profilePage).replace(/</g, "\\u003c")
+        }}
+      />
       <Header />
 
       <main className="split-layout" id="top">
@@ -25,6 +50,7 @@ export default function Home() {
             <span className="title-line">
               <span className="reveal-text reveal-2">Sonny</span>
             </span>
+            {" "}
             <span className="title-line title-line-bottom">
               <span className="reveal-text reveal-3">Proto</span>
             </span>
@@ -49,7 +75,9 @@ export default function Home() {
             </figcaption>
           </figure>
 
-          <p className="hero-note reveal reveal-5">A small corner of the internet.</p>
+          <p className="hero-note reveal reveal-5">
+            I&apos;m Sonny Proto. Find me online as @sonnyproto.
+          </p>
 
         </section>
 
