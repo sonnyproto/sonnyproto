@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { Header } from "@/components/Header";
 import { SocialDirectory } from "@/components/SocialDirectory";
+import { siteUrl } from "@/data/site";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: siteUrl
+  }
+};
 
 export default function Home() {
   return (
