@@ -1,18 +1,21 @@
+import Link from "next/link";
+
 export function Header() {
   return (
     <header className="site-header">
-      <a className="wordmark" href="#top" aria-label="Sonny Proto, back to top">
+      <Link className="wordmark" href="/" aria-label="Sonny Proto, home">
         SP / 01
-      </a>
+      </Link>
 
       <p className="header-index" aria-hidden="true">
-        Personal index<br />
-        001—005
+        AI Engineer<br />
+        Agent Infrastructure
       </p>
 
-      <a className="header-link" href="#links">
-        All links <span aria-hidden="true">↓</span>
-      </a>
+      <nav className="header-nav" aria-label="Main navigation">
+        <Link className="header-link" href="/#projects">Projects</Link>
+        <Link className="header-link" href="/#links">Links</Link>
+      </nav>
     </header>
   );
 }

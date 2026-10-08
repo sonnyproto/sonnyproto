@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Header } from "@/components/Header";
 import { SocialDirectory } from "@/components/SocialDirectory";
 import { socialLinks } from "@/data/links";
+import { vmaProject } from "@/data/projects";
 import { siteDescription, siteTitle, siteUrl } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -23,6 +25,13 @@ const profilePage = {
     "@id": `${siteUrl}/#person`,
     name: "Sonny Proto",
     alternateName: "sonnyproto",
+    jobTitle: "AI Engineer",
+    knowsAbout: [
+      "AI agents",
+      "Agent infrastructure",
+      "Multi-tenant systems",
+      "Sandboxed agent runtimes"
+    ],
     url: siteUrl,
     image: `${siteUrl}/me.png`,
     sameAs: socialLinks.map((link) => link.href)
@@ -40,10 +49,11 @@ export default function Home() {
       />
       <Header />
 
-      <main className="split-layout" id="top">
+      <main id="top">
+        <div className="split-layout">
         <section className="hero" aria-labelledby="page-title">
           <div className="hero-kicker reveal reveal-1">
-            <p>Personal index / 2026</p>
+            <p>AI Engineer / Agent Infrastructure</p>
           </div>
 
           <h1 id="page-title" className="hero-title" aria-label="Sonny Proto">
@@ -76,7 +86,7 @@ export default function Home() {
           </figure>
 
           <p className="hero-note reveal reveal-5">
-            I&apos;m Sonny Proto. Find me online as @sonnyproto.
+            I&apos;m Sonny Proto. I build AI agent infrastructure and multi-tenant systems.
           </p>
 
         </section>
@@ -96,6 +106,25 @@ export default function Home() {
           </div>
 
           <SocialDirectory />
+        </section>
+        </div>
+
+        <section className="selected-work" id="projects" aria-labelledby="projects-title">
+          <div>
+            <p className="section-label">Selected work / 01</p>
+            <h2 id="projects-title">{vmaProject.name}</h2>
+          </div>
+          <div className="project-summary">
+            <p className="project-focus">Agent infrastructure / Multi-tenant AI</p>
+            <p>{vmaProject.description}</p>
+            <p className="project-stack">Python · FastAPI · LangGraph</p>
+            <div className="project-actions">
+              <Link href={vmaProject.path}>Explore VMA <span aria-hidden="true">↗</span></Link>
+              <a href={vmaProject.docsUrl} target="_blank" rel="noreferrer">
+                API documentation <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
         </section>
       </main>
 

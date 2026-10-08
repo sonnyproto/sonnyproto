@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { siteDescription, siteTitle, siteUrl } from "@/data/site";
+import { profileImage, siteDescription, siteTitle, siteUrl } from "@/data/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -12,14 +12,7 @@ export const metadata: Metadata = {
     title: siteTitle,
     description: siteDescription,
     type: "website",
-    images: [
-      {
-        url: "/me.png",
-        width: 1024,
-        height: 1024,
-        alt: "Pixel portrait of Sonny Proto"
-      }
-    ]
+    images: [profileImage]
   },
   twitter: {
     card: "summary",
