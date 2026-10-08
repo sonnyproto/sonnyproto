@@ -85,10 +85,6 @@ export default function Home() {
             </figcaption>
           </figure>
 
-          <p className="hero-note reveal reveal-5">
-            I&apos;m Sonny Proto. I build AI agent infrastructure and multi-tenant systems.
-          </p>
-
         </section>
 
         <section className="links-section" id="links" aria-labelledby="links-title">
