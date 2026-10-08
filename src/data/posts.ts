@@ -6,7 +6,7 @@ export const posts = [
     slug: "multi-tenant-ai-agents",
     title: "Building Multi-Tenant AI Agents with VMA",
     description:
-      "Four practical concerns when building multi-tenant AI agents: API integration, customer access, usage tracking, and reconnecting to results.",
+      "How VMA handles multi-tenant AI agents, with a simple architecture diagram of async workers, saved events, and resumable SSE streaming.",
     category: "Agent Infrastructure",
     tags: ["AI Agents", "System Design", "Multi-Tenant SaaS"],
     publishedAt: "2026-10-07",

@@ -489,6 +489,77 @@ figure {
   margin-top: 1rem;
 }
 
+.vma-hld {
+  border: 1px solid var(--line);
+  margin: 2rem 0;
+  padding: 1.25rem;
+}
+
+.vma-hld-svg {
+  color: #333;
+  display: block;
+  font-family: inherit;
+  height: auto;
+  width: 100%;
+}
+
+.vma-hld-svg rect {
+  fill: #fafafa;
+  stroke: #b8b8b8;
+  stroke-width: 1;
+}
+
+.vma-hld-svg text {
+  text-anchor: middle;
+}
+
+.vma-hld-node-title {
+  fill: var(--ink);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.vma-hld-node-detail {
+  fill: #555;
+  font-size: 11px;
+}
+
+.vma-hld-connections {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+}
+
+.vma-hld-edge-label {
+  fill: #555;
+  font-size: 12px;
+}
+
+.vma-hld-mobile {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .vma-hld {
+    padding: 0.75rem;
+  }
+
+  .vma-hld-desktop {
+    display: none;
+  }
+
+  .vma-hld-mobile {
+    display: block;
+  }
+}
+
+.vma-hld figcaption {
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.7;
+  margin-top: 1rem;
+}
+
 .blog-article-end {
   border-top: 1px solid var(--line);
   display: flex;

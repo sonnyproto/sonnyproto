@@ -1,3 +1,5 @@
+import { VmaArchitecture } from "@/components/VmaArchitecture";
+
 export function AgentHarnessArticle() {
   return (
     <div className="blog-prose">
@@ -15,15 +17,6 @@ export function AgentHarnessArticle() {
           Each Session keeps its chosen Agent version and execution environment,
           so changing an agent does not silently change existing sessions.
         </p>
-        <p>
-          OpenClaw also supports multi-tenant hosting through experimental{" "}
-          <a href="https://docs.openclaw.ai/gateway/multi-tenant-hosting">
-            Fleet
-          </a>
-          , which runs a complete Gateway for each tenant. That fits hosting
-          independent assistants. VMA gives you resources to connect to your own
-          application.
-        </p>
       </section>
 
       <section className="blog-section" aria-labelledby="article-access">
@@ -36,12 +29,7 @@ export function AgentHarnessArticle() {
           VMA checks resources against the Organization selected by your API
           key. Keep that key on your backend, which still checks each user’s
           permissions. An Organization is the API access boundary; a Session
-          separates work. OpenClaw’s{" "}
-          <a href="https://docs.openclaw.ai/gateway/security/trust-model">
-            trust model
-          </a>{" "}
-          likewise requires separate Gateways for customers who do not trust
-          each other.
+          separates work.
         </p>
       </section>
 
@@ -60,23 +48,29 @@ export function AgentHarnessArticle() {
       <section className="blog-section" aria-labelledby="article-events">
         <h2 id="article-events">4. Let the page reconnect</h2>
         <p>
-          Closing a tab should not mean losing the task’s history. VMA records
-          Session events with sequence numbers. The frontend can{" "}
+          VMA sends progress over SSE (Server-Sent Events). Each saved Session
+          event has a sequence number, so the frontend can{" "}
           <a href="https://docs.vma.votrixai.com/docs/streaming">
             resume reading
           </a>{" "}
-          from its last event after a disconnect. This recovers the event
-          stream; your application still needs to handle retries of actions
-          such as sending an email or charging a card.
+          from its last event after a disconnect.
         </p>
       </section>
 
-      <p>
-        <strong>Under the hood:</strong> FastAPI handles requests, and services
-        check which Organization owns each resource. Deep Agents and LangGraph
-        run the agent with tools in the Session’s E2B sandbox. Saved events
-        feed the frontend.
-      </p>
+      <section className="blog-section" aria-labelledby="article-system-design">
+        <h2 id="article-system-design">How tasks and updates move</h2>
+        <p>
+          The API saves accepted input before handing the task to Cloud Tasks.
+          An async worker runs the agent and its sandbox tools. The request
+          returns once accepted, so your app can start watching results.
+        </p>
+        <VmaArchitecture />
+        <p>
+          SSE reads saved events independently of the worker. Temporary text
+          previews arrive through PostgreSQL notifications; saved events carry
+          the history that a reconnect can replay.
+        </p>
+      </section>
       <p>
         The{" "}
         <a href="https://docs.vma.votrixai.com/docs/api">VMA API docs</a>{" "}
