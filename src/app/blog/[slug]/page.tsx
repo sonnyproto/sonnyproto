@@ -71,7 +71,7 @@ export default async function BlogPost({ params }: PageProps) {
     <>
       <Header activeSection="blog" />
       <main className="blog-article-page" id="top">
-        <Link className="back-link" href="/blog">← Blog</Link>
+        <Link className="back-link" href="/blog">← Coding Blog</Link>
         <article>
           <header className="blog-article-heading">
             <p className="section-label">{post.category}</p>
@@ -89,7 +89,7 @@ export default async function BlogPost({ params }: PageProps) {
           <Content />
 
           <footer className="blog-article-end">
-            <Link href="/blog">← All articles</Link>
+            <Link href="/blog">← Coding Blog</Link>
             <Link href="/projects/vma">Related project: VMA <span aria-hidden="true">↗</span></Link>
           </footer>
         </article>

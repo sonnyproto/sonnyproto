@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import { formatPostDate, posts } from "@/data/posts";
 import { profileImage, siteUrl } from "@/data/site";
 
-const title = "Blog — Sonny Proto";
+const title = "Coding Blog — Sonny Proto";
 const description = "Notes on AI agents, infrastructure, and software systems by Sonny Proto.";
 const canonical = `${siteUrl}/blog`;
 
@@ -34,7 +34,7 @@ export default function BlogIndex() {
       <main className="blog-index" id="top">
         <header className="blog-index-heading">
           <p className="section-label">Writing / Notes &amp; experiments</p>
-          <h1>Blog.</h1>
+          <h1>Coding Blog</h1>
           <p>AI agents, systems design, and things worth figuring out.</p>
         </header>
 

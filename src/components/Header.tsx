@@ -13,7 +13,7 @@ export function Header({ activeSection }: { activeSection?: "blog" }) {
       </p>
 
       <nav className="header-nav" aria-label="Main navigation">
-        <Link className="header-link" href="/blog" aria-current={activeSection === "blog" ? "page" : undefined}>Blog</Link>
+        <Link className="header-link" href="/blog" aria-current={activeSection === "blog" ? "page" : undefined}>Coding Blog</Link>
         <Link className="header-link" href="/#links">Links</Link>
       </nav>
     </header>
