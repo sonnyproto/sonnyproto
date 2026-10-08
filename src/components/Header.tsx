@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export function Header() {
+export function Header({ activeSection }: { activeSection?: "blog" }) {
   return (
     <header className="site-header">
       <Link className="wordmark" href="/" aria-label="Sonny Proto, home">
@@ -13,7 +13,7 @@ export function Header() {
       </p>
 
       <nav className="header-nav" aria-label="Main navigation">
-        <Link className="header-link" href="/#projects">Projects</Link>
+        <Link className="header-link" href="/blog" aria-current={activeSection === "blog" ? "page" : undefined}>Blog</Link>
         <Link className="header-link" href="/#links">Links</Link>
       </nav>
     </header>

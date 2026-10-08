@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { Header } from "@/components/Header";
 import { SocialDirectory } from "@/components/SocialDirectory";
 import { socialLinks } from "@/data/links";
-import { vmaProject } from "@/data/projects";
 import { siteDescription, siteTitle, siteUrl } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -105,23 +103,6 @@ export default function Home() {
         </section>
         </div>
 
-        <section className="selected-work" id="projects" aria-labelledby="projects-title">
-          <div>
-            <p className="section-label">Selected work / 01</p>
-            <h2 id="projects-title">{vmaProject.name}</h2>
-          </div>
-          <div className="project-summary">
-            <p className="project-focus">Agent infrastructure / Multi-tenant AI</p>
-            <p>{vmaProject.description}</p>
-            <p className="project-stack">Python · FastAPI · LangGraph</p>
-            <div className="project-actions">
-              <Link href={vmaProject.path}>Explore VMA <span aria-hidden="true">↗</span></Link>
-              <a href={vmaProject.docsUrl} target="_blank" rel="noreferrer">
-                API documentation <span aria-hidden="true">↗</span>
-              </a>
-            </div>
-          </div>
-        </section>
       </main>
 
       <footer className="site-footer">

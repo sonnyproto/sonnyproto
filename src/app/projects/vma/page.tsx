@@ -60,7 +60,7 @@ export default function VmaProject() {
     <>
       <Header />
       <main className="project-page" id="top">
-        <Link className="back-link" href="/#projects">← All projects</Link>
+        <Link className="back-link" href="/">← Home</Link>
         <p className="section-label">Votrix Managed Agents / VMA</p>
         <h1>Infrastructure for multi-tenant AI agents.</h1>
         <p className="project-lead">{vmaProject.description}</p>

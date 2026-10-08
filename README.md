@@ -24,7 +24,7 @@ Social destinations are maintained in `src/data/links.ts`.
 
 The production URL is `https://sonnyproto.com`, defined in `src/data/site.ts`.
 The homepage declares this canonical URL, including when visited with query
-parameters. `/sitemap.xml` lists the homepage and `/projects/vma`, and
+parameters. `/sitemap.xml` lists the homepage, VMA project, blog index and articles, and
 `/robots.txt` advertises the sitemap. Each future page should declare its own
 canonical URL in its page metadata and be added to the sitemap.
 
@@ -35,9 +35,15 @@ links shown on the page. Keep profile claims factual and visible; do not add
 unverified jobs, awards, follower counts, or ratings to the structured data.
 
 The professional focus is AI engineering and agent infrastructure. The homepage
-links to a VMA project page that explains documented APIs, session resources,
-event streaming, and usage attribution. Project details are maintained in
-`src/data/projects.ts`; the project page has its own metadata and canonical.
+stays a minimal personal/social index and links to `/blog`. The blog index links
+to full articles at `/blog/{slug}`. Post metadata and content components are
+registered in `src/data/posts.ts`. Each article has its own canonical, sharing
+metadata and BlogPosting structured data. Add the content component with every
+new post so distinct URLs always render their own content.
+
+The VMA project page at `/projects/vma` explains documented APIs, session
+resources, event streaming and usage attribution. Project details are maintained
+in `src/data/projects.ts`; the project page has its own metadata and canonical.
 Article drafts and SEO working files under `artifacts/seo/` are local review
 artifacts, ignored by Git, and are not public routes.
 
