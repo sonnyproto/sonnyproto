@@ -4,13 +4,13 @@ import { AgentHarnessArticle } from "@/components/AgentHarnessArticle";
 export const posts = [
   {
     slug: "multi-tenant-ai-agents",
-    title: "Building Multi-Tenant AI Agents: Where the Harness Ends",
+    title: "Building Multi-Tenant AI Agents with VMA",
     description:
-      "How personal-agent trust models differ from multi-tenant SaaS, with a look at OpenClaw Fleet and the system design behind Votrix Managed Agents.",
+      "Four practical concerns when building multi-tenant AI agents: API integration, customer access, usage tracking, and reconnecting to results.",
     category: "Agent Infrastructure",
     tags: ["AI Agents", "System Design", "Multi-Tenant SaaS"],
     publishedAt: "2026-10-07",
-    readingMinutes: 7,
+    readingMinutes: 2,
     Content: AgentHarnessArticle
   }
 ] as const;
