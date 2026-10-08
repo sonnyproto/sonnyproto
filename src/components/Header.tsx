@@ -8,8 +8,8 @@ export function Header({ activeSection }: { activeSection?: "blog" }) {
       </Link>
 
       <p className="header-index" aria-hidden="true">
-        AI Engineer<br />
-        Agent Infrastructure
+        AI Engineer - Infra / Product<br />
+        AI Video Creator
       </p>
 
       <nav className="header-nav" aria-label="Main navigation">

@@ -550,7 +550,7 @@ figure {
 }
 
 .hero-kicker p:first-child {
-  max-width: 14rem;
+  max-width: 100%;
 }
 
 .hero-title {
@@ -995,7 +995,7 @@ figure {
   }
 
   .hero-kicker p:first-child {
-    max-width: 50%;
+    max-width: 100%;
   }
 
   .hero-title {

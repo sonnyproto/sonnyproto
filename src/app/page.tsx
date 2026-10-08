@@ -23,12 +23,13 @@ const profilePage = {
     "@id": `${siteUrl}/#person`,
     name: "Sonny Proto",
     alternateName: "sonnyproto",
-    jobTitle: "AI Engineer",
+    jobTitle: ["AI Engineer", "AI Video Creator"],
     knowsAbout: [
       "AI agents",
       "Agent infrastructure",
       "Multi-tenant systems",
-      "Sandboxed agent runtimes"
+      "Sandboxed agent runtimes",
+      "AI video production"
     ],
     url: siteUrl,
     image: `${siteUrl}/me.png`,
@@ -51,7 +52,7 @@ export default function Home() {
         <div className="split-layout">
         <section className="hero" aria-labelledby="page-title">
           <div className="hero-kicker reveal reveal-1">
-            <p>AI Engineer / Agent Infrastructure</p>
+            <p>AI Engineer - Infra / Product<br />AI Video Creator</p>
           </div>
 
           <h1 id="page-title" className="hero-title" aria-label="Sonny Proto">

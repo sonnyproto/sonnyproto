@@ -1,7 +1,7 @@
 export const siteUrl = "https://sonnyproto.com";
-export const siteTitle = "Sonny Proto (@sonnyproto) — AI Engineer";
+export const siteTitle = "Sonny Proto (@sonnyproto) — AI Engineer & AI Video Creator";
 export const siteDescription =
-  "AI engineer building agent infrastructure and multi-tenant systems. Creator of Votrix Managed Agents (VMA). Find my work and social profiles.";
+  "AI engineer focused on infrastructure and product, and AI video creator. Projects, coding notes, and social profiles by Sonny Proto (@sonnyproto).";
 
 export const profileImage = {
   url: "/me.png",
