@@ -2,6 +2,7 @@ import { socialLinks } from "@/data/links";
 import {
   FaGithub,
   FaInstagram,
+  FaLinkedinIn,
   FaTiktok,
   FaXTwitter,
   FaYoutube
@@ -11,6 +12,7 @@ import type { IconType } from "react-icons";
 const platformIcons: Record<string, IconType> = {
   GitHub: FaGithub,
   Instagram: FaInstagram,
+  LinkedIn: FaLinkedinIn,
   TikTok: FaTiktok,
   X: FaXTwitter,
   YouTube: FaYoutube

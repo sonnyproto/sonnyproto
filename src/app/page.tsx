@@ -88,7 +88,7 @@ export default function Home() {
 
         <section className="links-section" id="links" aria-labelledby="links-title">
           <div className="section-heading">
-            <p className="section-label">Directory / 05</p>
+            <p className="section-label">Directory / {String(socialLinks.length).padStart(2, "0")}</p>
             <h2 id="links-title">
               Find me
               <br />

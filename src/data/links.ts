@@ -41,5 +41,12 @@ export const socialLinks: SocialLink[] = [
     domain: "tiktok.com",
     note: "Play",
     href: "https://www.tiktok.com/@sonnyproto"
+  },
+  {
+    index: "06",
+    name: "LinkedIn",
+    domain: "linkedin.com",
+    note: "Connect",
+    href: "https://www.linkedin.com/in/sonnyproto"
   }
 ];
