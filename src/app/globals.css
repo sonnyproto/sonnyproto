@@ -750,13 +750,15 @@ figure {
 }
 
 .section-heading {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  gap: clamp(0.75rem, 2vh, 1.5rem) 1.5rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr);
 }
 
 .section-label {
   color: var(--muted);
   font-size: 0.7rem;
+  grid-column: 1 / -1;
   letter-spacing: 0.07em;
   line-height: 1;
   text-transform: uppercase;
@@ -764,21 +766,20 @@ figure {
 
 .section-heading h2 {
   font-family: var(--display);
-  font-size: clamp(3.75rem, min(6vw, 9vh), 6.5rem);
+  font-size: clamp(2.5rem, min(4.6vw, 8vh), 4.75rem);
   font-weight: 400;
   letter-spacing: -0.07em;
-  line-height: 0.72;
-  margin-top: clamp(1.75rem, 3vh, 2.5rem);
+  line-height: 0.78;
   text-transform: uppercase;
 }
 
 .section-caption {
   align-self: flex-end;
   color: var(--muted);
-  font-size: clamp(0.9rem, 1.15vw, 1.1rem);
+  font-size: clamp(0.85rem, 1.05vw, 1rem);
+  justify-self: end;
   line-height: 1.45;
-  margin-top: clamp(0.75rem, 1.75vh, 1.25rem);
-  width: min(14rem, 48%);
+  width: min(12rem, 100%);
 }
 
 .social-directory {
@@ -786,7 +787,7 @@ figure {
   display: flex;
   flex: 1;
   flex-direction: column;
-  margin-top: clamp(1.5rem, 3vh, 2.5rem);
+  margin-top: clamp(1.5rem, 4vh, 3rem);
   min-height: 0;
 }
 
@@ -827,7 +828,7 @@ figure {
   align-items: center;
   display: flex;
   font-family: var(--display);
-  font-size: clamp(2.9rem, 4.2vw, 4.5rem);
+  font-size: clamp(2rem, min(3.8vw, 6vh), 4rem);
   gap: 0.28em;
   grid-column: 2 / 8;
   letter-spacing: -0.055em;
@@ -1103,6 +1104,8 @@ figure {
 
   .section-heading {
     display: flex;
+    flex-direction: column;
+    gap: 0;
   }
 
   .section-label {
