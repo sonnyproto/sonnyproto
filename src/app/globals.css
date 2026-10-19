@@ -560,6 +560,62 @@ figure {
   margin-top: 1rem;
 }
 
+.copy-prompt {
+  border: 1px solid var(--line);
+  margin: 1.5rem 0;
+}
+
+.copy-prompt figcaption {
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  display: flex;
+  font-size: 0.85rem;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 0.6rem 0.75rem 0.6rem 1.25rem;
+}
+
+.copy-prompt button {
+  background: var(--ink);
+  border: 0;
+  color: var(--white);
+  cursor: pointer;
+  flex-shrink: 0;
+  font: inherit;
+  padding: 0.45rem 0.9rem;
+}
+
+.copy-prompt pre {
+  border: 0;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.subscribe {
+  border: 1px solid var(--line);
+  margin-top: 3.5rem;
+  padding: 1.5rem;
+}
+
+.subscribe h2 {
+  font-family: var(--display);
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.subscribe p {
+  color: var(--muted);
+  margin: 0.5rem 0 1rem;
+}
+
+.subscribe iframe {
+  background: var(--white);
+  border: 0;
+  width: 100%;
+}
+
 .blog-article-end {
   border-top: 1px solid var(--line);
   display: flex;
