@@ -7,7 +7,7 @@ export type SocialLink = {
 };
 
 export const homeBlogLinks = [
-  { name: "Video Blog", href: "/video-blog", description: "Films & prompts", note: "Read & create" },
+  { name: "Creator Blog", href: "/creator-blog", description: "Films & prompts", note: "Read & create" },
   { name: "Coding Blog", href: "/coding-blog", description: "Agents & systems", note: "Read & build" }
 ] as const;
 

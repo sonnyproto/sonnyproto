@@ -6,7 +6,7 @@ export function VideoPostList({ posts }: { posts: readonly BlogPost[] }) {
   return (
     <div className="blog-post-list">
       {posts.map((post, index) => (
-        <Link className="blog-post-card video-post-card" href={`/video-blog/${post.slug}`} aria-label={post.title} key={post.slug}>
+        <Link className="blog-post-card video-post-card" href={`/creator-blog/${post.slug}`} aria-label={post.title} key={post.slug}>
           {post.cover ? (
             <div className="video-post-cover video-post-cover-image">
               <Image src={post.cover.src} alt={post.cover.alt} width={post.cover.width} height={post.cover.height}

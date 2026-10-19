@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: siteUrl },
     { url: `${siteUrl}${vmaProject.path}` },
     { url: `${siteUrl}/coding-blog` },
-    { url: `${siteUrl}/video-blog` },
+    { url: `${siteUrl}/creator-blog` },
     ...visiblePosts.filter((post) => !post.draft).map((post) => ({
       url: getPostUrl(post.slug, post.section),
       lastModified: post.publishedAt

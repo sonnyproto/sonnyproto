@@ -24,7 +24,7 @@ export type BlogPost = {
 
 export const blogSections = {
   coding: { label: "Coding Blog", path: "/coding-blog" },
-  video: { label: "Video Blog", path: "/video-blog" }
+  video: { label: "Creator Blog", path: "/creator-blog" }
 } as const;
 
 export const posts: readonly BlogPost[] = [

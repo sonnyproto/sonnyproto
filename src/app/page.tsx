@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   }
 };
 
-const blogIcons = { "Video Blog": FaClapperboard, "Coding Blog": FaCode };
+const blogIcons = { "Creator Blog": FaClapperboard, "Coding Blog": FaCode };
 
 const profilePage = {
   "@context": "https://schema.org",
