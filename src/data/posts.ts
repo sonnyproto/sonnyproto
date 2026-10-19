@@ -23,7 +23,7 @@ export type BlogPost = {
 };
 
 export const blogSections = {
-  coding: { label: "Coding Blog", path: "/blog" },
+  coding: { label: "Coding Blog", path: "/coding-blog" },
   video: { label: "Video Blog", path: "/video-blog" }
 } as const;
 

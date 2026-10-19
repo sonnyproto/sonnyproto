@@ -6,7 +6,7 @@ import { profileImage, siteUrl } from "@/data/site";
 
 const title = "Coding Blog — Sonny Proto";
 const description = "Notes on AI agents, infrastructure, and software systems by Sonny Proto.";
-const canonical = `${siteUrl}/blog`;
+const canonical = `${siteUrl}/coding-blog`;
 
 export const metadata: Metadata = {
   title,
@@ -32,6 +32,7 @@ export default function BlogIndex() {
     <>
       <Header activeSection="blog" />
       <main className="blog-index" id="top">
+        <Link className="back-link" href="/">← Home</Link>
         <header className="blog-index-heading">
           <p className="section-label">Writing / Notes &amp; experiments</p>
           <h1>Coding Blog</h1>
@@ -40,7 +41,7 @@ export default function BlogIndex() {
 
         <div className="blog-post-list">
           {getSectionPosts("coding").map((post) => (
-            <Link className="blog-post-card" href={`/blog/${post.slug}`} aria-label={post.title} key={post.slug}>
+            <Link className="blog-post-card" href={`/coding-blog/${post.slug}`} aria-label={post.title} key={post.slug}>
               <article>
                 <div className="blog-post-meta">
                   <span>{post.category}</span>

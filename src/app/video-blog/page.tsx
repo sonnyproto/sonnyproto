@@ -24,6 +24,7 @@ export default function VideoBlog() {
     <>
       <Header activeSection="video" />
       <main className="blog-index" id="top">
+        <Link className="back-link" href="/">← Home</Link>
         <header className="blog-index-heading">
           <p className="section-label">Film / References, prompts &amp; process</p>
           <h1>Video Blog</h1>

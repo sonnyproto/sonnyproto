@@ -8,9 +8,10 @@ Personal site built with Next.js. Run `npm run dev`, `npm run typecheck`, and `n
 
 On the homepage, keep the social directory separate from the blogs. The bottom dark area places the introduction on the left and Video Blog followed by Coding Blog on the right. Keep the blog icons. Split “I prototype. I iterate.” into two lines, with the second line offset to the right like the Sonny / Proto title. Stack these columns on small screens.
 
-- Coding Blog: `/blog` — posts with `section: "coding"`.
-- Current coding article: `/blog/multi-tenant-agent-harness`. The former `/blog/multi-tenant-ai-agents` address is removed without a redirect.
+- Coding Blog: `/coding-blog` — posts with `section: "coding"`.
+- Current coding article: `/coding-blog/multi-tenant-agent-harness`. The former `/blog` section and article addresses are removed without redirects.
 - Video Blog: `/video-blog` — posts with `section: "video"`.
+- Both blog index pages have a visible `← Home` link at the top, in addition to the footer home link.
 - There is no KNIGHT collection. `/video-blog/knight`, `/video-blog/cats`, and `/video-blog/catknight` are removed without redirects. Video articles return directly to `/video-blog`.
 - Cat Knight I: `/video-blog/catknight1`. The earlier article URL has been removed, without a redirect.
 

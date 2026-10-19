@@ -14,7 +14,7 @@ export function Header({ activeSection }: { activeSection?: "blog" | "video" }) 
 
       <nav className="header-nav" aria-label="Main navigation">
         <Link className="header-link" href="/video-blog" aria-current={activeSection === "video" ? "page" : undefined}>Video Blog</Link>
-        <Link className="header-link" href="/blog" aria-current={activeSection === "blog" ? "page" : undefined}>Coding Blog</Link>
+        <Link className="header-link" href="/coding-blog" aria-current={activeSection === "blog" ? "page" : undefined}>Coding Blog</Link>
         <Link className="header-link" href="/#links">Links</Link>
       </nav>
     </header>
