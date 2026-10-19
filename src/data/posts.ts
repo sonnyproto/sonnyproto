@@ -5,7 +5,7 @@ import { AgentHarnessArticle } from "@/components/AgentHarnessArticle";
 import { CatKnightPromptArticle } from "@/components/CatKnightPromptArticle";
 
 export type BlogSection = "coding" | "video";
-export type VideoSeries = "catknight";
+export type VideoSeries = "knight";
 
 export type BlogPost = {
   section: BlogSection;
@@ -54,7 +54,7 @@ export const posts: readonly BlogPost[] = [
     publishedAt: "2026-10-19",
     readingMinutes: 15,
     draft: false,
-    series: "catknight",
+    series: "knight",
     cover: {
       src: "/media/catknight1/infernal-throne.png",
       alt: "An enormous black infernal throne surrounded by fire",

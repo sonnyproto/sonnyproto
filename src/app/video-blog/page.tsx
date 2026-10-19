@@ -28,7 +28,6 @@ export default function VideoBlog() {
           <p className="section-label">Film / References, prompts &amp; process</p>
           <h1>Video Blog</h1>
           <p>The films I make, and how I make them.</p>
-          <Link className="blog-read-link" href="/video-blog/catknight">Explore the Cat Knight series <span aria-hidden="true">↗</span></Link>
         </header>
 
         {posts.length ? (

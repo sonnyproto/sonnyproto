@@ -6,7 +6,7 @@ Personal site built with Next.js. Run `npm run dev`, `npm run typecheck`, and `n
 
 - Coding Blog: `/blog` — posts with `section: "coding"`.
 - Video Blog: `/video-blog` — posts with `section: "video"`.
-- Cat Knight series: `/video-blog/catknight` — video posts with `series: "catknight"`, newest first. The previous `/video-blog/cats` entry redirects here permanently and preserves incoming query parameters.
+- KNIGHT: `/video-blog/knight` — the overview for all knight stories, titled **KNIGHT** with **Films & prompts** below it. Video posts with `series: "knight"` appear newest first. The previous `/video-blog/cats` and `/video-blog/catknight` entries redirect here permanently and preserve incoming query parameters.
 - Cat Knight I: `/video-blog/catknight1`. The earlier article URL has been removed, without a redirect.
 
 Article metadata lives in `src/data/posts.ts`. Each entry points to a React content component. Drafts appear only in local development and are excluded from production pages and the sitemap. Fill in the content and assets, update the publication date, and set `draft: false` when ready to publish.
@@ -44,9 +44,9 @@ Put local files under `public/media/`; reference their URLs with `/media/` (with
 
 - Comment keyword to configure in Business Suite: **KNIGHT**.
 - Video call to action: **Comment KNIGHT**.
-- Campaign: `catknight` for the series entry point.
+- Campaign: `knight` for the overview entry point.
 - Link for the automatic reply:
-  `https://sonnyproto.com/video-blog/catknight?utm_source=instagram&utm_medium=social&utm_campaign=catknight`
+  `https://sonnyproto.com/video-blog/knight?utm_source=instagram&utm_medium=social&utm_campaign=knight`
 - Individual article: `https://sonnyproto.com/video-blog/catknight1`.
 - Collection card clicks emit `series_post_clicked` with `series` and `post_slug` in PostHog. This measures the selected article, not which Instagram post generated the visit.
 

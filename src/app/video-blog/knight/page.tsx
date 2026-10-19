@@ -5,9 +5,9 @@ import { VideoPostList } from "@/components/VideoPostList";
 import { getSeriesPosts } from "@/data/posts";
 import { siteUrl } from "@/data/site";
 
-const title = "Cat Knight — Films & Prompts | Sonny Proto";
-const description = "The Cat Knight series: selected AI video prompts and reference packs, with the newest stories first.";
-const canonical = `${siteUrl}/video-blog/catknight`;
+const title = "KNIGHT — Films & Prompts | Sonny Proto";
+const description = "Films, selected AI video prompts, and reference packs from KNIGHT, with the newest stories first.";
+const canonical = `${siteUrl}/video-blog/knight`;
 const image = { url: "/media/catknight1/infernal-throne.png", width: 2048, height: 1152, alt: "The infernal throne from Cat Knight I" };
 
 export const metadata: Metadata = {
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title, description, images: [image.url] }
 };
 
-export default function CatKnightSeries() {
-  const posts = getSeriesPosts("catknight");
+export default function KnightOverview() {
+  const posts = getSeriesPosts("knight");
 
   return (
     <>
@@ -27,12 +27,11 @@ export default function CatKnightSeries() {
       <main className="blog-index" id="top">
         <Link className="back-link" href="/video-blog">← Video Blog</Link>
         <header className="blog-index-heading">
-          <p className="section-label">The Cat Knight series</p>
-          <h1>Cat Knight</h1>
-          <p>Little knights. Dark worlds. Find your story, then get the prompt and references.</p>
-          <p className="series-intro">The newest Cat Knight stories appear first. Earlier chapters stay below, so you can always find the knight that brought you here.</p>
+          <h1>KNIGHT</h1>
+          <p className="knight-subtitle">Films &amp; prompts</p>
+          <p className="series-intro">Explore the stories, then get the prompts and references.</p>
         </header>
-        <VideoPostList posts={posts} series="catknight" />
+        <VideoPostList posts={posts} series="knight" />
       </main>
       <footer className="project-footer">
         <p>Sonny Proto / @sonnyproto</p>

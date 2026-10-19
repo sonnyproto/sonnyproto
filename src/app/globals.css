@@ -610,6 +610,14 @@ figure {
   max-width: 40rem;
 }
 
+.blog-index-heading .knight-subtitle {
+  color: var(--muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
 .subscribe {
   border: 1px solid var(--line);
   margin-top: 3.5rem;
