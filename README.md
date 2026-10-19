@@ -10,7 +10,7 @@ Personal site built with Next.js. Run `npm run dev`, `npm run typecheck`, and `n
 
 Article metadata lives in `src/data/posts.ts`. Each entry points to a React content component. Drafts appear only in local development and are excluded from production pages and the sitemap. Fill in the content and assets, update the publication date, and set `draft: false` when ready to publish.
 
-The existing `src/components/KittyPromptArticle.tsx` is the Cat Knight draft. Its `media` object accepts the finished film and reference images. Keep the existing `CopyPrompt` component: it includes the copy interaction and PostHog event.
+The published Cat Knight article is `src/components/KittyPromptArticle.tsx`. Complete English prompts and their revision history live in `src/data/catknight1-prompts.ts`; its five original reference images live in `public/media/catknight1/`. Keep the existing `CopyPrompt` component: it includes the copy interaction and PostHog event.
 
 ### Rich article content
 
@@ -43,7 +43,7 @@ Put local files under `public/media/`; reference their URLs with `/media/` (with
 
 - Comment keyword: **KITTY** (unchanged; configured in Business Suite).
 - Campaign: `catknight1`.
-- Link to use after the article is published:
+- Published article link:
   `https://sonnyproto.com/video-blog/catknight1?utm_source=instagram&utm_medium=social&utm_campaign=catknight1`
 
 Pushing to `main` triggers the existing Cloudflare deployment. A draft article still returns 404 in production.

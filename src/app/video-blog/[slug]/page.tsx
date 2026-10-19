@@ -18,6 +18,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const post = getPost(slug, "video");
   if (!post) notFound();
+  const image = post.cover ? {
+    url: post.cover.src,
+    alt: post.cover.alt,
+    width: post.cover.width,
+    height: post.cover.height
+  } : profileImage;
 
   return {
     title: `${post.title} | Sonny Proto`,
@@ -32,14 +38,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: "article",
       publishedTime: post.publishedAt,
       authors: [siteUrl],
-      images: [profileImage]
+      images: [image]
     },
     twitter: {
-      card: "summary",
+      card: post.cover ? "summary_large_image" : "summary",
       title: post.title,
       description: post.description,
       creator: "@sonnyproto",
-      images: [profileImage.url]
+      images: [image.url]
     }
   };
 }
@@ -60,7 +66,7 @@ export default async function VideoPost({ params }: PageProps) {
     datePublished: post.publishedAt,
     dateModified: post.publishedAt,
     inLanguage: "en",
-    image: [`${siteUrl}${profileImage.url}`],
+    image: [new URL(post.cover?.src ?? profileImage.url, siteUrl).href],
     author: { "@type": "Person", "@id": `${siteUrl}/#person`, name: "Sonny Proto", url: siteUrl }
   };
 

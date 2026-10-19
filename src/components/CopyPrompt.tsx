@@ -28,7 +28,7 @@ export function CopyPrompt({ name, prompt }: CopyPromptProps) {
         <span>{name}</span>
         <button type="button" onClick={copy}>{copied ? "Copied" : "Copy prompt"}</button>
       </figcaption>
-      <pre>{prompt}</pre>
+      <pre tabIndex={0} aria-label={`${name} text`}>{prompt}</pre>
     </figure>
   );
 }

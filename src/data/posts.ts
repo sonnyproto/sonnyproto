@@ -44,21 +44,26 @@ export const posts: readonly BlogPost[] = [
   },
   {
     section: "video",
-    // TODO(sonny): fill in the article, then set draft to false and update publishedAt.
     slug: "catknight1",
-    title: "Cat Knight I — Prompts & process",
-    description: "The references, prompts, and production notes behind the Cat Knight film.",
+    title: "Cat Knight I — Full Prompts & References",
+    description: "Complete English prompts, five reference images, and shot-by-shot directions for the broken bridge and infernal throne scenes.",
     category: "AI Video",
     tags: ["AI Video", "Prompts"],
-    publishedAt: "2026-10-18",
-    readingMinutes: 3,
-    draft: true,
+    publishedAt: "2026-10-19",
+    readingMinutes: 40,
+    draft: false,
+    cover: {
+      src: "/media/catknight1/infernal-throne.png",
+      alt: "An enormous black infernal throne surrounded by fire",
+      width: 2048,
+      height: 1152
+    },
     contents: [
-      { id: "kitty-film", label: "The film" },
-      { id: "kitty-references", label: "Reference images" },
-      { id: "kitty-tools", label: "What I used" },
-      { id: "kitty-prompts", label: "The prompts" },
-      { id: "kitty-tips", label: "Notes & settings" }
+      { id: "reference-pack", label: "Reference pack" },
+      { id: "bridge-prompt", label: "Broken bridge prompt" },
+      { id: "throne-prompt", label: "Infernal throne prompt" },
+      { id: "production-notes", label: "Production notes" },
+      { id: "prompt-history", label: "Earlier versions" }
     ],
     related: { href: "https://www.youtube.com/@sonnyproto", label: "More on YouTube" },
     Content: KittyPromptArticle
