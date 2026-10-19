@@ -5,8 +5,8 @@ export function Subscribe() {
 
   return (
     <section className="subscribe" aria-labelledby="subscribe-title">
-      <h2 id="subscribe-title">One new AI video prompt every week</h2>
-      <p>Free prompts, the models behind them, and what I’m building. No spam.</p>
+      <h2 id="subscribe-title">Get new AI video prompts by email</h2>
+      <p>I’ll email you when a new prompt is up, with the models behind it. No spam.</p>
       <iframe
         src={`${substackUrl}/embed`}
         title="Subscribe to Sonny Proto on Substack"
