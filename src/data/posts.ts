@@ -62,7 +62,7 @@ export const posts: readonly BlogPost[] = [
       { id: "outdoor-references", label: "Outdoor references" },
       { id: "reference-pack", label: "Throne references" },
       { id: "throne-prompt", label: "Infernal throne prompt" },
-      { id: "questions", label: "Q&A" }
+      { id: "questions", label: "Prompting Q&A" }
     ],
     related: { href: "https://www.youtube.com/@sonnyproto", label: "More on YouTube" },
     Content: CatKnightPromptArticle

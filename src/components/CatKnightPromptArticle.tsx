@@ -67,20 +67,32 @@ const stoneBridgeReference: ArticleImageProps = {
 
 const questions = [
   {
-    question: "Which reference images should I upload?",
-    answer: "For the throne prompt, use Images 1–5 in that order. Outdoor A–C are a separate reference pack for the earlier outdoor scenes."
+    question: "Why give each shot a starting state and an ending state?",
+    answer: [
+      "Treat each cut as a handoff. Describe what is already true, what changes during the shot, and what the next shot inherits. Here, the kitten begins on the throne seat, turns and sits; the following shot begins with it already seated. Walking up the steps would break that chain, even if the individual image looked convincing.",
+      "Give each shot one main change and enough time to complete it. If walking, turning, sitting, and putting on a helmet all compete inside one short shot, simplify the action or split it. Timestamps communicate the intended pacing; they do not guarantee frame-accurate cuts."
+    ]
   },
   {
-    question: "How do I open the full-size reference images?",
-    answer: "Select any reference image to open the original in a new tab. You can then save it from your browser."
+    question: "How do you preserve identity while changing a character's appearance?",
+    answer: [
+      "Separate the features that stay fixed from the state that changes. Images 1 and 2 show the same kitten: the same face, fur, small proportions, and pink bow. The helmet changes its appearance. Naming those fixed features makes the intended transformation specific, instead of leaving the character's entire design open to reinterpretation.",
+      "Give each reference a defined job. Image 4 supplies the man's facial identity; Image 5 supplies his profile and greatsword. Its two-handed grip conflicts with the one-armed character in this scene, so the prompt explicitly calls for a right-handed grip. A reference can supply a face or prop design without prescribing the generated pose."
+    ]
   },
   {
-    question: "Is the man's scream supposed to be silent?",
-    answer: "Yes. The scream is visual only. There is no dialogue or character voice in this scene. Distant fire is the only ambience, and it fades toward silence during the scream."
+    question: "Why spell out contact points and prop placement?",
+    answer: [
+      "Spend detail on the physical dependencies of an action: what supports an object, what grips it, and what must be released before the next movement. A pose can look plausible in a still image while leaving the movement into or out of it impossible.",
+      "In this prompt, the helmet starts within reach, both forepaws lift it, and the axe leans against the seat during that action. The man grips the greatsword with his right hand while its tip rests on the floor. Checking those relationships exposes conflicting instructions, such as asking a paw to hold an axe and lift a helmet at the same time."
+    ]
   },
   {
-    question: "Do I need to set the generator to 120fps?",
-    answer: "No. The 120fps and 48–60fps figures describe the desired slow-motion look when played back at 24fps. They are creative motion directions, rather than a record of generation settings. Use your generator's own controls for output duration and frame rate; results can vary by model and version."
+    question: "How do you prompt an intense emotion without dialogue?",
+    answer: [
+      "Translate the emotion into things a camera can record: wet eyes, a tightening neck, one sustained mouth opening, and a hand that keeps gripping the sword. The word 'anguish' gives the performance a direction; those observable actions give the description something specific to stage.",
+      "Write the sound requirements separately. Here, the man visibly screams while the sound design excludes his voice, crying, and breathing, and pulls the fire ambience almost to silence. Review picture and sound independently. If unwanted vocals remain, remove them during the edit; repeated silence instructions alone cannot guarantee the result."
+    ]
   }
 ];
 
@@ -137,12 +149,12 @@ export function CatKnightPromptArticle() {
       </section>
 
       <section className="blog-section" aria-labelledby="questions">
-        <h2 id="questions">Q&amp;A</h2>
+        <h2 id="questions">Prompting Q&amp;A</h2>
         <div className="article-faq">
           {questions.map(({ question, answer }) => (
             <details key={question}>
               <summary>{question}</summary>
-              <p>{answer}</p>
+              {answer.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </details>
           ))}
         </div>

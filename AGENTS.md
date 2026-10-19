@@ -21,6 +21,8 @@ Article metadata lives in `src/data/posts.ts`. Each entry points to a React cont
 
 The published Cat Knight article is `src/components/CatKnightPromptArticle.tsx`. Its one selected complete English prompt lives in `src/data/catknight1-prompts.ts`; throne and outdoor reference images live in `public/media/catknight1/`. The throne prompt uses its five numbered images; the outdoor pack is a separate set. Unpublished revisions are stored outside this public repository. Earlier Git commits may still contain previously published versions. Keep the existing `CopyPrompt` component: it includes the copy interaction and PostHog event.
 
+Article Q&As should explain concrete prompting decisions through examples from the published prompt. Prioritize useful reasoning about staging, references, and continuity. Avoid filler setup questions, unsupported claims about models, and invented accounts of private experiments.
+
 ### Rich article content
 
 Write normal JSX paragraphs, headings, links and lists inside `.blog-prose`. Add section IDs to the post's `contents` array to populate its table of contents. Media components can be mixed with text and prompts in any order:
