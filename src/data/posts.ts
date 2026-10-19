@@ -2,10 +2,10 @@ import type { ComponentType } from "react";
 import type { ArticleImageProps } from "@/components/ArticleMedia";
 import { siteUrl } from "@/data/site";
 import { AgentHarnessArticle } from "@/components/AgentHarnessArticle";
-import { KittyPromptArticle } from "@/components/KittyPromptArticle";
+import { CatKnightPromptArticle } from "@/components/CatKnightPromptArticle";
 
 export type BlogSection = "coding" | "video";
-export type VideoSeries = "cats";
+export type VideoSeries = "catknight";
 
 export type BlogPost = {
   section: BlogSection;
@@ -54,7 +54,7 @@ export const posts: readonly BlogPost[] = [
     publishedAt: "2026-10-19",
     readingMinutes: 15,
     draft: false,
-    series: "cats",
+    series: "catknight",
     cover: {
       src: "/media/catknight1/infernal-throne.png",
       alt: "An enormous black infernal throne surrounded by fire",
@@ -67,7 +67,7 @@ export const posts: readonly BlogPost[] = [
       { id: "production-notes", label: "Before you generate" }
     ],
     related: { href: "https://www.youtube.com/@sonnyproto", label: "More on YouTube" },
-    Content: KittyPromptArticle
+    Content: CatKnightPromptArticle
   }
 ];
 

@@ -74,8 +74,8 @@ export default async function VideoPost({ params }: PageProps) {
     <>
       <Header activeSection="video" />
       <main className="blog-article-page video-article-page" id="top">
-        <Link className="back-link" href={post.series === "cats" ? "/video-blog/cats" : "/video-blog"}>
-          {post.series === "cats" ? "← Cat collection" : "← Video Blog"}
+        <Link className="back-link" href={post.series === "catknight" ? "/video-blog/catknight" : "/video-blog"}>
+          {post.series === "catknight" ? "← Cat Knight series" : "← Video Blog"}
         </Link>
         <article>
           <header className="blog-article-heading">
@@ -105,8 +105,8 @@ export default async function VideoPost({ params }: PageProps) {
               <Content />
               <Subscribe />
               <footer className="blog-article-end">
-                <Link href={post.series === "cats" ? "/video-blog/cats" : "/video-blog"}>
-                  {post.series === "cats" ? "← Cat collection" : "← Video Blog"}
+                <Link href={post.series === "catknight" ? "/video-blog/catknight" : "/video-blog"}>
+                  {post.series === "catknight" ? "← Cat Knight series" : "← Video Blog"}
                 </Link>
                 <Link href={post.related.href}>{post.related.label} <span aria-hidden="true">↗</span></Link>
               </footer>

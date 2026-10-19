@@ -40,7 +40,7 @@ const references = {
   }
 } satisfies Record<string, ArticleImageProps>;
 
-export function KittyPromptArticle() {
+export function CatKnightPromptArticle() {
   return (
     <div className="blog-prose">
       <p className="blog-callout">

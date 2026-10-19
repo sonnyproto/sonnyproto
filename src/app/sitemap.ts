@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}${vmaProject.path}` },
     { url: `${siteUrl}/blog` },
     { url: `${siteUrl}/video-blog` },
-    { url: `${siteUrl}/video-blog/cats` },
+    { url: `${siteUrl}/video-blog/catknight` },
     ...visiblePosts.filter((post) => !post.draft).map((post) => ({
       url: getPostUrl(post.slug, post.section),
       lastModified: post.publishedAt
