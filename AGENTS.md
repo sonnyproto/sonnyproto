@@ -8,6 +8,8 @@ Personal site built with Next.js. Run `npm run dev`, `npm run typecheck`, and `n
 
 On the homepage, keep the social directory separate from the blogs. The bottom dark area places the introduction on the left and Video Blog followed by Coding Blog on the right. Keep the blog icons. Split “I prototype. I iterate.” into two lines, with the second line offset to the right like the Sonny / Proto title. Stack these columns on small screens.
 
+Keep navigation and action controls prominent, with readable labels and at least 48px of clickable height. The top navigation starts with Home. On phones, give navigation its own row instead of shrinking the labels. Homepage footer blog entries invert to a white background and black text on hover and keyboard focus, matching the social directory's effect.
+
 - Coding Blog: `/coding-blog` — posts with `section: "coding"`.
 - Current coding article: `/coding-blog/multi-tenant-agent-harness`. The former `/blog` section and article addresses are removed without redirects.
 - Video Blog: `/video-blog` — posts with `section: "video"`.

@@ -50,7 +50,7 @@ export default function Home() {
           __html: JSON.stringify(profilePage).replace(/</g, "\\u003c")
         }}
       />
-      <Header />
+      <Header activeSection="home" />
 
       <main id="top">
         <div className="split-layout">
