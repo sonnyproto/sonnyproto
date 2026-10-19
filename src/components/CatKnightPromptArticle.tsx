@@ -65,9 +65,39 @@ const stoneBridgeReference: ArticleImageProps = {
   caption: "Outdoor C — The ancient stone bridge. Use its weathered masonry, arches, cliff scale, and mist-filled ravine as the location reference."
 };
 
+const questions = [
+  {
+    question: "Which reference images should I upload?",
+    answer: "For the throne prompt, use Images 1–5 in that order. Outdoor A–C are a separate reference pack for the earlier outdoor scenes."
+  },
+  {
+    question: "How do I open the full-size reference images?",
+    answer: "Select any reference image to open the original in a new tab. You can then save it from your browser."
+  },
+  {
+    question: "Is the man's scream supposed to be silent?",
+    answer: "Yes. The scream is visual only. There is no dialogue or character voice in this scene. Distant fire is the only ambience, and it fades toward silence during the scream."
+  },
+  {
+    question: "Do I need to set the generator to 120fps?",
+    answer: "No. The 120fps and 48–60fps figures describe the desired slow-motion look when played back at 24fps. They are creative motion directions, rather than a record of generation settings. Use your generator's own controls for output duration and frame rate; results can vary by model and version."
+  }
+];
+
 export function CatKnightPromptArticle() {
   return (
     <div className="blog-prose">
+      <section className="blog-section" aria-labelledby="outdoor-references">
+        <h2 id="outdoor-references">Outdoor references</h2>
+        <p>
+          These images belong to the earlier outdoor scenes. The silver-armored kitten supplies
+          the character identity; the grassland and stone bridge supply the environments. They
+          form a separate pack from Images 1–5 in the throne references below.
+        </p>
+        <ImageGallery images={outdoorReferences} />
+        <ArticleImage {...stoneBridgeReference} />
+      </section>
+
       <p className="blog-callout">
         A wounded man faces his former companion at an infernal throne.
         The little knight turns, takes its seat, and gives him no answer.
@@ -79,7 +109,7 @@ export function CatKnightPromptArticle() {
       </p>
 
       <section className="blog-section" aria-labelledby="reference-pack">
-        <h2 id="reference-pack">The reference pack</h2>
+        <h2 id="reference-pack">Throne references</h2>
         <p>
           The five images below are numbered to match the throne prompt. Open any image for the
           full-resolution original, then upload the references in that order. They define the
@@ -106,26 +136,16 @@ export function CatKnightPromptArticle() {
         <CopyPrompt name="Cat Knight I — Infernal throne · full prompt" prompt={throneSeated} />
       </section>
 
-      <section className="blog-section" aria-labelledby="outdoor-references">
-        <h2 id="outdoor-references">Outdoor references</h2>
-        <p>
-          These images belong to the earlier outdoor scenes. The silver-armored kitten supplies
-          the character identity; the grassland and stone bridge supply the environments. Use
-          them for those scenes separately from the throne prompt, which references Images 1–5 above.
-        </p>
-        <ImageGallery images={outdoorReferences} />
-        <ArticleImage {...stoneBridgeReference} />
-      </section>
-
-      <section className="blog-section" aria-labelledby="production-notes">
-        <h2 id="production-notes">Before you generate</h2>
-        <p>
-          Use the reference-image inputs in your video generator and keep their numbering aligned
-          with the prompt. Duration and output controls vary by model; the prompts describe the
-          intended sequence rather than a guaranteed set of interface settings. The high-speed
-          frame rates describe a desired slow-motion look. Results can change with the model
-          and version you use.
-        </p>
+      <section className="blog-section" aria-labelledby="questions">
+        <h2 id="questions">Q&amp;A</h2>
+        <div className="article-faq">
+          {questions.map(({ question, answer }) => (
+            <details key={question}>
+              <summary>{question}</summary>
+              <p>{answer}</p>
+            </details>
+          ))}
+        </div>
       </section>
 
     </div>

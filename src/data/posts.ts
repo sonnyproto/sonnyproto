@@ -32,12 +32,12 @@ export const blogSections = {
 export const posts: readonly BlogPost[] = [
   {
     section: "coding",
-    slug: "multi-tenant-ai-agents",
-    title: "Building Multi-Tenant AI Agents with VMA",
+    slug: "multi-tenant-agent-harness",
+    title: "Building a Multi-Tenant Agent Harness with VMA",
     description:
-      "How VMA handles multi-tenant AI agents, with a simple architecture diagram of async workers, saved events, and resumable SSE streaming.",
+      "How VMA runs async agent tasks, streams saved events, integrates OpenRouter, and attributes model spending across Accounts.",
     category: "Agent Infrastructure",
-    tags: ["AI Agents", "System Design", "Multi-Tenant SaaS"],
+    tags: ["Agent Harnesses", "System Design", "OpenRouter", "Multi-Tenant SaaS"],
     publishedAt: "2026-10-07",
     readingMinutes: 2,
     draft: false,
@@ -62,10 +62,10 @@ export const posts: readonly BlogPost[] = [
       height: 1152
     },
     contents: [
-      { id: "reference-pack", label: "Reference pack" },
-      { id: "throne-prompt", label: "Infernal throne prompt" },
       { id: "outdoor-references", label: "Outdoor references" },
-      { id: "production-notes", label: "Before you generate" }
+      { id: "reference-pack", label: "Throne references" },
+      { id: "throne-prompt", label: "Infernal throne prompt" },
+      { id: "questions", label: "Q&A" }
     ],
     related: { href: "https://www.youtube.com/@sonnyproto", label: "More on YouTube" },
     Content: CatKnightPromptArticle

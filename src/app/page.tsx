@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Header } from "@/components/Header";
 import { SocialDirectory } from "@/components/SocialDirectory";
-import { socialLinks } from "@/data/links";
+import { homeBlogLinks, socialLinks } from "@/data/links";
 import { siteDescription, siteTitle, siteUrl } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -88,7 +88,7 @@ export default function Home() {
 
         <section className="links-section" id="links" aria-labelledby="links-title">
           <div className="section-heading">
-            <p className="section-label">Directory / {String(socialLinks.length).padStart(2, "0")}</p>
+            <p className="section-label">Directory / {String(homeBlogLinks.length + socialLinks.length).padStart(2, "0")}</p>
             <h2 id="links-title">
               Find me
               <br />

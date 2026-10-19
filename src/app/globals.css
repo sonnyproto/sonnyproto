@@ -604,6 +604,57 @@ figure {
   outline-offset: -2px;
 }
 
+.article-faq details {
+  border-top: 1px solid var(--line);
+}
+
+.article-faq details:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.article-faq summary {
+  align-items: center;
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 500;
+  gap: 1.5rem;
+  justify-content: space-between;
+  line-height: 1.55;
+  list-style: none;
+  padding: 1.15rem 0;
+}
+
+.article-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.article-faq summary::after {
+  content: "+";
+  flex-shrink: 0;
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-align: center;
+  width: 1rem;
+}
+
+.article-faq details[open] summary::after {
+  content: "−";
+}
+
+.article-faq summary:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.blog-prose .article-faq details > p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0 2rem 1.25rem 0;
+}
+
 .blog-index-heading .series-intro {
   font-size: 0.9rem;
   line-height: 1.7;
@@ -1175,6 +1226,10 @@ figure {
   width: 0.46em;
 }
 
+.home-blog-row .social-name {
+  font-size: clamp(1.7rem, min(3.1vw, 5vh), 3.25rem);
+}
+
 .social-meta {
   display: flex;
   flex-direction: column;
@@ -1495,6 +1550,10 @@ figure {
     grid-column: 1 / 4;
     grid-row: 2;
     margin-top: 1rem;
+  }
+
+  .home-blog-row .social-name {
+    font-size: clamp(2.2rem, 10.5vw, 3.6rem);
   }
 
   .social-meta {

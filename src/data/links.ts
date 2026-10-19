@@ -6,6 +6,11 @@ export type SocialLink = {
   href: string;
 };
 
+export const homeBlogLinks = [
+  { name: "Video Blog", href: "/video-blog", description: "Films & prompts", note: "Read & create" },
+  { name: "Coding Blog", href: "/blog", description: "Agents & systems", note: "Read & build" }
+] as const;
+
 export const socialLinks: SocialLink[] = [
   {
     index: "01",

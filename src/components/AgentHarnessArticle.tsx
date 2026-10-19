@@ -3,50 +3,46 @@ import { VmaArchitecture } from "@/components/VmaArchitecture";
 export function AgentHarnessArticle() {
   return (
     <div className="blog-prose">
-      <p>
-        When different customers use an AI agent product, their files,
-        permissions, and spending need clear boundaries. I built Votrix Managed
-        Agents (VMA) as an API for running agents inside a product. These are
-        four things I care about when building multi-tenant AI agents.
-      </p>
-
-      <section className="blog-section" aria-labelledby="article-api">
-        <h2 id="article-api">1. An API your product can call</h2>
+      <section className="blog-section" aria-labelledby="article-system-design">
+        <h2 id="article-system-design">How tasks and updates move</h2>
         <p>
-          Your backend creates a Session, sends a task, and reads the results.
-          Each Session keeps its chosen Agent version and execution environment,
-          so changing an agent does not silently change existing sessions.
+          Votrix Managed Agents (VMA) is a multi-tenant agent harness. The API
+          saves accepted input before handing the task to Cloud Tasks. An async
+          worker runs the agent and its sandbox tools. The request returns once
+          accepted, so your app can start watching results.
+        </p>
+        <VmaArchitecture />
+        <p>
+          SSE reads saved events independently of the worker. Temporary text
+          previews arrive through PostgreSQL notifications; saved events carry
+          the history that a reconnect can replay.
         </p>
       </section>
 
-      <section className="blog-section" aria-labelledby="article-access">
-        <h2 id="article-access">2. Keep customer access explicit</h2>
+      <section className="blog-section" aria-labelledby="article-openrouter">
+        <h2 id="article-openrouter">OpenRouter integration</h2>
         <p>
-          Say customer A uploads a private spreadsheet. Customer B should never
-          see it just because they know its file or session ID.
+          The runtime sends model calls through OpenRouter. Agents choose from
+          VMA’s model catalog, so different model providers share the same agent
+          execution path.
         </p>
         <p>
-          VMA checks resources against the Organization selected by your API
-          key. Keep that key on your backend, which still checks each user’s
-          permissions. An Organization is the API access boundary; a Session
-          separates work.
+          Each Account owns a dedicated OpenRouter inference key, stored
+          encrypted. A Session keeps its assigned Account, and each turn uses
+          that Account’s key. The platform’s management credential provisions
+          and manages those keys; it is not used for inference.
         </p>
-      </section>
-
-      <section className="blog-section" aria-labelledby="article-spending">
-        <h2 id="article-spending">3. Track whose work costs money</h2>
         <p>
-          VMA’s{" "}
-          <a href="https://docs.vma.votrixai.com/docs/accounts">Accounts</a>{" "}
-          group usage and spending. You can use that information in your own
-          plans and billing logic. An Account tracks costs; it does not give a
-          user permission to access data. Your application still owns pricing
-          and final bills.
+          Every model request carries the VMA Session ID as OpenRouter’s{" "}
+          <code>session_id</code>. This groups calls from the same conversation
+          in OpenRouter and connects provider usage to the Session that produced
+          it. The runtime also handles model-specific routing, prompt-cache
+          settings, and retries for transient failures.
         </p>
       </section>
 
       <section className="blog-section" aria-labelledby="article-events">
-        <h2 id="article-events">4. Let the page reconnect</h2>
+        <h2 id="article-events">Let the page reconnect</h2>
         <p>
           VMA sends progress over SSE (Server-Sent Events). Each saved Session
           event has a sequence number, so the frontend can{" "}
@@ -57,18 +53,20 @@ export function AgentHarnessArticle() {
         </p>
       </section>
 
-      <section className="blog-section" aria-labelledby="article-system-design">
-        <h2 id="article-system-design">How tasks and updates move</h2>
+      <section className="blog-section" aria-labelledby="article-spending">
+        <h2 id="article-spending">Track whose work costs money</h2>
         <p>
-          The API saves accepted input before handing the task to Cloud Tasks.
-          An async worker runs the agent and its sandbox tools. The request
-          returns once accepted, so your app can start watching results.
+          Usage comes from OpenRouter’s reported USD snapshots. VMA exposes
+          Account totals and cumulative spending for a Session, so you can
+          attribute model costs to the work that produced them.
         </p>
-        <VmaArchitecture />
         <p>
-          SSE reads saved events independently of the worker. Temporary text
-          previews arrive through PostgreSQL notifications; saved events carry
-          the history that a reconnect can replay.
+          VMA’s{" "}
+          <a href="https://docs.vma.votrixai.com/docs/accounts">Accounts</a>{" "}
+          group usage and spending. You can use that information in your own
+          plans and billing logic. An Account tracks costs; it does not give a
+          user permission to access data. Your application still owns pricing
+          and final bills.
         </p>
       </section>
       <p>
