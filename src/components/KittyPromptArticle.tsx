@@ -1,4 +1,10 @@
 import { CopyPrompt } from "@/components/CopyPrompt";
+import { ArticleVideo, ImageGallery, type ArticleVideoProps, type ArticleImageProps } from "@/components/ArticleMedia";
+
+// Add the finished film and references here; assets can be local /media paths or HTTPS URLs.
+const media: { film?: ArticleVideoProps; references: readonly ArticleImageProps[] } = {
+  references: []
+};
 
 // TODO(sonny): replace every placeholder below before publishing.
 const prompts = [
@@ -19,12 +25,26 @@ export function KittyPromptArticle() {
         TODO: one or two sentences on what the video shows and what readers will make.
       </p>
 
+      <section className="blog-section" aria-labelledby="kitty-film">
+        <h2 id="kitty-film">The film</h2>
+        {media.film ? <ArticleVideo {...media.film} /> : (
+          <p className="media-placeholder">The finished film will be added here before publication.</p>
+        )}
+      </section>
+
+      <section className="blog-section" aria-labelledby="kitty-references">
+        <h2 id="kitty-references">Reference images</h2>
+        {media.references.length ? <ImageGallery images={media.references} /> : (
+          <p className="media-placeholder">Character sheets, location references, and selected frames will be added here.</p>
+        )}
+      </section>
+
       <section className="blog-section" aria-labelledby="kitty-tools">
         <h2 id="kitty-tools">What I used</h2>
         <ul>
           {/* TODO: swap in your affiliate links. */}
-          <li><a href="https://example.com">TODO tool</a> — what it did in this video</li>
-          <li><a href="https://example.com">TODO model</a> — what it did in this video</li>
+          <li>TODO tool — what it did in this video</li>
+          <li>TODO model — what it did in this video</li>
         </ul>
       </section>
 

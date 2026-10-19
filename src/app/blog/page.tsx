@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Header } from "@/components/Header";
-import { formatPostDate, visiblePosts } from "@/data/posts";
+import { formatPostDate, getSectionPosts } from "@/data/posts";
 import { profileImage, siteUrl } from "@/data/site";
 
 const title = "Coding Blog — Sonny Proto";
@@ -39,7 +39,7 @@ export default function BlogIndex() {
         </header>
 
         <div className="blog-post-list">
-          {visiblePosts.map((post) => (
+          {getSectionPosts("coding").map((post) => (
             <Link className="blog-post-card" href={`/blog/${post.slug}`} aria-label={post.title} key={post.slug}>
               <article>
                 <div className="blog-post-meta">

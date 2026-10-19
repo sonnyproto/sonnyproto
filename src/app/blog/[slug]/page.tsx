@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Header } from "@/components/Header";
-import { Subscribe } from "@/components/Subscribe";
-import { formatPostDate, getPost, getPostUrl, visiblePosts } from "@/data/posts";
+import { formatPostDate, getPost, getPostUrl, getSectionPosts } from "@/data/posts";
 import { profileImage, siteUrl } from "@/data/site";
 
 type PageProps = { params: Promise<{ slug: string }> };
@@ -11,7 +10,7 @@ type PageProps = { params: Promise<{ slug: string }> };
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return visiblePosts.map((post) => ({ slug: post.slug }));
+  return getSectionPosts("coding").map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -88,8 +87,6 @@ export default async function BlogPost({ params }: PageProps) {
           </header>
 
           <Content />
-
-          <Subscribe />
 
           <footer className="blog-article-end">
             <Link href="/blog">← Coding Blog</Link>

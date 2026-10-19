@@ -7,7 +7,7 @@ export const posthogKey = "phc_AhvDgaWA88xQAmikpwxw8FW9k6VBvBX4fu23F9mQY2Tb";
 export const posthogHost = "https://us.i.posthog.com";
 export const siteTitle = "Sonny Proto (@sonnyproto) — AI Engineer & AI Video Creator";
 export const siteDescription =
-  "AI engineer focused on infrastructure and product, and AI video creator. Projects, coding notes, and social profiles by Sonny Proto (@sonnyproto).";
+  "AI engineer focused on infrastructure and product, and AI video creator. Projects, coding notes, films, prompts, and social profiles by Sonny Proto (@sonnyproto).";
 
 export const profileImage = {
   url: "/me.png",

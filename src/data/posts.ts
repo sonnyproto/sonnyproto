@@ -1,9 +1,35 @@
+import type { ComponentType } from "react";
+import type { ArticleImageProps } from "@/components/ArticleMedia";
 import { siteUrl } from "@/data/site";
 import { AgentHarnessArticle } from "@/components/AgentHarnessArticle";
 import { KittyPromptArticle } from "@/components/KittyPromptArticle";
 
-export const posts = [
+export type BlogSection = "coding" | "video";
+
+type BlogPost = {
+  section: BlogSection;
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+  tags: readonly string[];
+  publishedAt: string;
+  readingMinutes: number;
+  draft: boolean;
+  cover?: ArticleImageProps;
+  contents?: readonly { id: string; label: string }[];
+  related: { href: string; label: string };
+  Content: ComponentType;
+};
+
+export const blogSections = {
+  coding: { label: "Coding Blog", path: "/blog" },
+  video: { label: "Video Blog", path: "/video-blog" }
+} as const;
+
+export const posts: readonly BlogPost[] = [
   {
+    section: "coding",
     slug: "multi-tenant-ai-agents",
     title: "Building Multi-Tenant AI Agents with VMA",
     description:
@@ -17,31 +43,43 @@ export const posts = [
     Content: AgentHarnessArticle
   },
   {
+    section: "video",
     // TODO(sonny): fill in the article, then set draft to false and update publishedAt.
-    slug: "kitty-ai-video-prompts",
-    title: "TODO: KITTY AI Video Prompts",
-    description: "TODO: the prompts and models behind the KITTY video.",
+    slug: "catknight1",
+    title: "Cat Knight I — Prompts & process",
+    description: "The references, prompts, and production notes behind the Cat Knight film.",
     category: "AI Video",
     tags: ["AI Video", "Prompts"],
     publishedAt: "2026-10-18",
     readingMinutes: 3,
     draft: true,
+    contents: [
+      { id: "kitty-film", label: "The film" },
+      { id: "kitty-references", label: "Reference images" },
+      { id: "kitty-tools", label: "What I used" },
+      { id: "kitty-prompts", label: "The prompts" },
+      { id: "kitty-tips", label: "Notes & settings" }
+    ],
     related: { href: "https://www.youtube.com/@sonnyproto", label: "More on YouTube" },
     Content: KittyPromptArticle
   }
-] as const;
+];
 
 // Drafts render in `next dev` only, so they never ship by accident.
 export const visiblePosts = posts.filter(
   (post) => !post.draft || process.env.NODE_ENV === "development"
 );
 
-export function getPost(slug: string) {
-  return visiblePosts.find((post) => post.slug === slug);
+export function getSectionPosts(section: BlogSection) {
+  return visiblePosts.filter((post) => post.section === section);
 }
 
-export function getPostUrl(slug: string) {
-  return `${siteUrl}/blog/${slug}`;
+export function getPost(slug: string, section: BlogSection = "coding") {
+  return visiblePosts.find((post) => post.slug === slug && post.section === section);
+}
+
+export function getPostUrl(slug: string, section: BlogSection = "coding") {
+  return `${siteUrl}${blogSections[section].path}/${slug}`;
 }
 
 export function formatPostDate(date: string) {
