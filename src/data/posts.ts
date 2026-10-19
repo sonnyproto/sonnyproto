@@ -5,8 +5,9 @@ import { AgentHarnessArticle } from "@/components/AgentHarnessArticle";
 import { KittyPromptArticle } from "@/components/KittyPromptArticle";
 
 export type BlogSection = "coding" | "video";
+export type VideoSeries = "cats";
 
-type BlogPost = {
+export type BlogPost = {
   section: BlogSection;
   slug: string;
   title: string;
@@ -16,6 +17,7 @@ type BlogPost = {
   publishedAt: string;
   readingMinutes: number;
   draft: boolean;
+  series?: VideoSeries;
   cover?: ArticleImageProps;
   contents?: readonly { id: string; label: string }[];
   related: { href: string; label: string };
@@ -45,13 +47,14 @@ export const posts: readonly BlogPost[] = [
   {
     section: "video",
     slug: "catknight1",
-    title: "Cat Knight I — Full Prompts & References",
-    description: "Complete English prompts, five reference images, and shot-by-shot directions for the broken bridge and infernal throne scenes.",
+    title: "Cat Knight I — The Infernal Throne",
+    description: "A complete English prompt and five reference images for a wordless confrontation at an infernal throne.",
     category: "AI Video",
     tags: ["AI Video", "Prompts"],
     publishedAt: "2026-10-19",
-    readingMinutes: 40,
+    readingMinutes: 15,
     draft: false,
+    series: "cats",
     cover: {
       src: "/media/catknight1/infernal-throne.png",
       alt: "An enormous black infernal throne surrounded by fire",
@@ -60,10 +63,8 @@ export const posts: readonly BlogPost[] = [
     },
     contents: [
       { id: "reference-pack", label: "Reference pack" },
-      { id: "bridge-prompt", label: "Broken bridge prompt" },
       { id: "throne-prompt", label: "Infernal throne prompt" },
-      { id: "production-notes", label: "Production notes" },
-      { id: "prompt-history", label: "Earlier versions" }
+      { id: "production-notes", label: "Before you generate" }
     ],
     related: { href: "https://www.youtube.com/@sonnyproto", label: "More on YouTube" },
     Content: KittyPromptArticle
@@ -77,6 +78,12 @@ export const visiblePosts = posts.filter(
 
 export function getSectionPosts(section: BlogSection) {
   return visiblePosts.filter((post) => post.section === section);
+}
+
+export function getSeriesPosts(series: VideoSeries) {
+  return getSectionPosts("video")
+    .filter((post) => post.series === series)
+    .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 }
 
 export function getPost(slug: string, section: BlogSection = "coding") {

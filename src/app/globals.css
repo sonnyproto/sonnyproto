@@ -604,36 +604,10 @@ figure {
   outline-offset: -2px;
 }
 
-.prompt-note {
-  border-left: 2px solid var(--line);
-  color: var(--muted);
+.blog-index-heading .series-intro {
   font-size: 0.9rem;
-  padding-left: 1.25rem;
-}
-
-.prompt-history details {
-  border-top: 1px solid var(--line);
-  padding: 1.25rem 0;
-}
-
-.prompt-history details:last-child {
-  border-bottom: 1px solid var(--line);
-}
-
-.prompt-history summary {
-  color: var(--ink);
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.prompt-history summary:focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 4px;
-}
-
-.prompt-history details > p {
-  font-size: 0.9rem;
+  line-height: 1.7;
+  max-width: 40rem;
 }
 
 .subscribe {

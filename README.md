@@ -6,11 +6,12 @@ Personal site built with Next.js. Run `npm run dev`, `npm run typecheck`, and `n
 
 - Coding Blog: `/blog` — posts with `section: "coding"`.
 - Video Blog: `/video-blog` — posts with `section: "video"`.
+- Cat collection: `/video-blog/cats` — video posts with `series: "cats"`, newest first. This is the permanent KITTY entry point.
 - Cat Knight I: `/video-blog/catknight1`. The old KITTY URL has been removed, without a redirect.
 
 Article metadata lives in `src/data/posts.ts`. Each entry points to a React content component. Drafts appear only in local development and are excluded from production pages and the sitemap. Fill in the content and assets, update the publication date, and set `draft: false` when ready to publish.
 
-The published Cat Knight article is `src/components/KittyPromptArticle.tsx`. Complete English prompts and their revision history live in `src/data/catknight1-prompts.ts`; its five original reference images live in `public/media/catknight1/`. Keep the existing `CopyPrompt` component: it includes the copy interaction and PostHog event.
+The published Cat Knight article is `src/components/KittyPromptArticle.tsx`. Its one selected complete English prompt lives in `src/data/catknight1-prompts.ts`; five original reference images live in `public/media/catknight1/`. Unpublished revisions are stored outside this public repository. Earlier Git commits may still contain previously published versions. Keep the existing `CopyPrompt` component: it includes the copy interaction and PostHog event.
 
 ### Rich article content
 
@@ -42,8 +43,10 @@ Put local files under `public/media/`; reference their URLs with `/media/` (with
 ### Instagram handoff
 
 - Comment keyword: **KITTY** (unchanged; configured in Business Suite).
-- Campaign: `catknight1`.
-- Published article link:
-  `https://sonnyproto.com/video-blog/catknight1?utm_source=instagram&utm_medium=social&utm_campaign=catknight1`
+- Campaign: `kitty` for the series entry point.
+- Link for the KITTY automatic reply:
+  `https://sonnyproto.com/video-blog/cats?utm_source=instagram&utm_medium=social&utm_campaign=kitty`
+- Individual article: `https://sonnyproto.com/video-blog/catknight1`.
+- Collection card clicks emit `series_post_clicked` with `series` and `post_slug` in PostHog. This measures the selected article, not which Instagram post generated the visit.
 
 Pushing to `main` triggers the existing Cloudflare deployment. A draft article still returns 404 in production.
