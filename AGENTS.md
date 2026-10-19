@@ -1,10 +1,15 @@
-# Sonny Proto
+# Sonny Proto — agent instructions
+
+Keep repository instructions and collaboration notes in `AGENTS.md`. Do not create or update `README.md` unless the user explicitly requests it. Keep all public website copy in English.
 
 Personal site built with Next.js. Run `npm run dev`, `npm run typecheck`, and `npm run build` locally.
 
 ## Blogs
 
+On the homepage, keep the social directory separate from the blogs. The bottom dark area places the introduction on the left and Video Blog followed by Coding Blog on the right. Keep the blog icons. Split “I prototype. I iterate.” into two lines, with the second line offset to the right like the Sonny / Proto title. Stack these columns on small screens.
+
 - Coding Blog: `/blog` — posts with `section: "coding"`.
+- Current coding article: `/blog/multi-tenant-agent-harness`. The former `/blog/multi-tenant-ai-agents` address is removed without a redirect.
 - Video Blog: `/video-blog` — posts with `section: "video"`.
 - KNIGHT: `/video-blog/knight` — the overview for all knight stories, titled **KNIGHT** with **Films & prompts** below it. Video posts with `series: "knight"` appear newest first. The previous `/video-blog/cats` and `/video-blog/catknight` entries redirect here permanently and preserve incoming query parameters.
 - Cat Knight I: `/video-blog/catknight1`. The earlier article URL has been removed, without a redirect.

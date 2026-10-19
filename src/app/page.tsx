@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
+import { FaClapperboard, FaCode } from "react-icons/fa6";
 import { Header } from "@/components/Header";
 import { SocialDirectory } from "@/components/SocialDirectory";
 import { homeBlogLinks, socialLinks } from "@/data/links";
@@ -10,6 +12,8 @@ export const metadata: Metadata = {
     canonical: siteUrl
   }
 };
+
+const blogIcons = { "Video Blog": FaClapperboard, "Coding Blog": FaCode };
 
 const profilePage = {
   "@context": "https://schema.org",
@@ -88,7 +92,7 @@ export default function Home() {
 
         <section className="links-section" id="links" aria-labelledby="links-title">
           <div className="section-heading">
-            <p className="section-label">Directory / {String(homeBlogLinks.length + socialLinks.length).padStart(2, "0")}</p>
+            <p className="section-label">Directory / {String(socialLinks.length).padStart(2, "0")}</p>
             <h2 id="links-title">
               Find me
               <br />
@@ -111,7 +115,32 @@ export default function Home() {
           <p>Index complete</p>
           <a href="#top">Back to top ↑</a>
         </div>
-        <p className="footer-handle">I prototype. I iterate.</p>
+        <div className="footer-content">
+          <p className="footer-handle">
+            <span>I prototype.</span>{" "}
+            <span className="footer-line-offset">I iterate.</span>
+          </p>
+          <nav className="footer-blogs" aria-label="Blogs">
+            {homeBlogLinks.map((link, index) => {
+              const BlogIcon = blogIcons[link.name];
+
+              return (
+                <Link className="footer-blog-link" href={link.href} key={link.name} aria-label={link.name}>
+                  <span className="footer-blog-index">{String(index + 1).padStart(2, "0")}</span>
+                  <span className="footer-blog-title">
+                    <BlogIcon className="social-logo" aria-hidden="true" />
+                    <span>{link.name}</span>
+                  </span>
+                  <span className="footer-blog-meta">
+                    <span>{link.description}</span>
+                    <span className="footer-blog-note">{link.note}</span>
+                  </span>
+                  <span className="footer-blog-arrow" aria-hidden="true">↗</span>
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
         <div className="footer-bottomline">
           <p>© 2026</p>
           <p>Made for the internet</p>
