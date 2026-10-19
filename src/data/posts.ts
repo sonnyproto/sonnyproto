@@ -5,7 +5,6 @@ import { AgentHarnessArticle } from "@/components/AgentHarnessArticle";
 import { CatKnightPromptArticle } from "@/components/CatKnightPromptArticle";
 
 export type BlogSection = "coding" | "video";
-export type VideoSeries = "knight";
 
 export type BlogPost = {
   section: BlogSection;
@@ -17,7 +16,6 @@ export type BlogPost = {
   publishedAt: string;
   readingMinutes: number;
   draft: boolean;
-  series?: VideoSeries;
   cover?: ArticleImageProps;
   contents?: readonly { id: string; label: string }[];
   related: { href: string; label: string };
@@ -54,7 +52,6 @@ export const posts: readonly BlogPost[] = [
     publishedAt: "2026-10-19",
     readingMinutes: 15,
     draft: false,
-    series: "knight",
     cover: {
       src: "/media/catknight1/infernal-throne.png",
       alt: "An enormous black infernal throne surrounded by fire",
@@ -79,12 +76,6 @@ export const visiblePosts = posts.filter(
 
 export function getSectionPosts(section: BlogSection) {
   return visiblePosts.filter((post) => post.section === section);
-}
-
-export function getSeriesPosts(series: VideoSeries) {
-  return getSectionPosts("video")
-    .filter((post) => post.series === series)
-    .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 }
 
 export function getPost(slug: string, section: BlogSection = "coding") {

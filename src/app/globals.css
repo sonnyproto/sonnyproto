@@ -655,20 +655,6 @@ figure {
   margin: 0 2rem 1.25rem 0;
 }
 
-.blog-index-heading .series-intro {
-  font-size: 0.9rem;
-  line-height: 1.7;
-  max-width: 40rem;
-}
-
-.blog-index-heading .knight-subtitle {
-  color: var(--muted);
-  font-size: 0.85rem;
-  letter-spacing: 0.06em;
-  line-height: 1.5;
-  margin-bottom: 1.25rem;
-}
-
 .subscribe {
   border: 1px solid var(--line);
   margin-top: 3.5rem;

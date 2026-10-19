@@ -11,7 +11,7 @@ On the homepage, keep the social directory separate from the blogs. The bottom d
 - Coding Blog: `/blog` — posts with `section: "coding"`.
 - Current coding article: `/blog/multi-tenant-agent-harness`. The former `/blog/multi-tenant-ai-agents` address is removed without a redirect.
 - Video Blog: `/video-blog` — posts with `section: "video"`.
-- KNIGHT: `/video-blog/knight` — the overview for all knight stories, titled **KNIGHT** with **Films & prompts** below it. Video posts with `series: "knight"` appear newest first. The previous `/video-blog/cats` and `/video-blog/catknight` entries redirect here permanently and preserve incoming query parameters.
+- There is no KNIGHT collection. `/video-blog/knight`, `/video-blog/cats`, and `/video-blog/catknight` are removed without redirects. Video articles return directly to `/video-blog`.
 - Cat Knight I: `/video-blog/catknight1`. The earlier article URL has been removed, without a redirect.
 
 Article metadata lives in `src/data/posts.ts`. Each entry points to a React content component. Drafts appear only in local development and are excluded from production pages and the sitemap. Fill in the content and assets, update the publication date, and set `draft: false` when ready to publish.
@@ -47,12 +47,13 @@ Put local files under `public/media/`; reference their URLs with `/media/` (with
 
 ### Instagram handoff
 
-- Comment keyword to configure in Business Suite: **KNIGHT**.
+- Use InstantDM automations for individual posts, linking directly to the matching article.
+- Comment keyword: **KNIGHT**.
 - Video call to action: **Comment KNIGHT**.
-- Campaign: `knight` for the overview entry point.
-- Link for the automatic reply:
-  `https://sonnyproto.com/video-blog/knight?utm_source=instagram&utm_medium=social&utm_campaign=knight`
+- Cat Knight I campaign: `catknight1`.
+- Direct article link for the automatic reply:
+  `https://sonnyproto.com/video-blog/catknight1?utm_source=instagram&utm_medium=social&utm_campaign=catknight1`
 - Individual article: `https://sonnyproto.com/video-blog/catknight1`.
-- Collection card clicks emit `series_post_clicked` with `series` and `post_slug` in PostHog. This measures the selected article, not which Instagram post generated the visit.
+- Website edits do not configure InstantDM or Business Suite. Do not claim those automations have been updated without verifying them separately.
 
 Pushing to `main` triggers the existing Cloudflare deployment. A draft article still returns 404 in production.

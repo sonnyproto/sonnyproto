@@ -1,12 +1,12 @@
 import Image from "next/image";
-import { VideoPostLink } from "@/components/VideoPostLink";
-import { formatPostDate, type BlogPost, type VideoSeries } from "@/data/posts";
+import Link from "next/link";
+import { formatPostDate, type BlogPost } from "@/data/posts";
 
-export function VideoPostList({ posts, series }: { posts: readonly BlogPost[]; series?: VideoSeries }) {
+export function VideoPostList({ posts }: { posts: readonly BlogPost[] }) {
   return (
     <div className="blog-post-list">
       {posts.map((post, index) => (
-        <VideoPostLink slug={post.slug} title={post.title} series={series} key={post.slug}>
+        <Link className="blog-post-card video-post-card" href={`/video-blog/${post.slug}`} aria-label={post.title} key={post.slug}>
           {post.cover ? (
             <div className="video-post-cover video-post-cover-image">
               <Image src={post.cover.src} alt={post.cover.alt} width={post.cover.width} height={post.cover.height}
@@ -29,7 +29,7 @@ export function VideoPostList({ posts, series }: { posts: readonly BlogPost[]; s
             <p>{post.description}</p>
             <span className="blog-read-link">Get the prompt <span aria-hidden="true">↗</span></span>
           </article>
-        </VideoPostLink>
+        </Link>
       ))}
     </div>
   );
