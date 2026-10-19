@@ -40,6 +40,31 @@ const references = {
   }
 } satisfies Record<string, ArticleImageProps>;
 
+const outdoorReferences: readonly ArticleImageProps[] = [
+  {
+    src: "/media/catknight1/silver-knight.png",
+    alt: "Front view, facial close-up, and profile of the cream kitten knight wearing silver plate armor and a pink bow",
+    width: 2720,
+    height: 1536,
+    caption: "Outdoor A — The silver-armored kitten. Use the face, cream fur, pink bow, small proportions, armor, and sword as the character reference."
+  },
+  {
+    src: "/media/catknight1/foggy-grassland.png",
+    alt: "A wide expanse of wind-swept dark green grass fading into dense cool gray fog",
+    width: 2048,
+    height: 1152,
+    caption: "Outdoor B — The foggy grassland. Use the grass texture, wind direction, layered mist, and cool gray-green palette for the outdoor setting."
+  }
+];
+
+const stoneBridgeReference: ArticleImageProps = {
+  src: "/media/catknight1/stone-bridge.png",
+  alt: "A colossal weathered stone bridge with tall arches spanning a mist-filled ravine between rocky cliffs",
+  width: 2048,
+  height: 1152,
+  caption: "Outdoor C — The ancient stone bridge. Use its weathered masonry, arches, cliff scale, and mist-filled ravine as the location reference."
+};
+
 export function CatKnightPromptArticle() {
   return (
     <div className="blog-prose">
@@ -48,8 +73,9 @@ export function CatKnightPromptArticle() {
         The little knight turns, takes its seat, and gives him no answer.
       </p>
       <p>
-        One complete English prompt and five reference images for the Cat Knight throne scene.
-        Download the references, keep their numbering in order, and copy the prompt below.
+        One complete English prompt for the Cat Knight throne scene, with its five numbered
+        reference images and an additional outdoor reference pack. Keep each pack with its
+        corresponding scene.
       </p>
 
       <section className="blog-section" aria-labelledby="reference-pack">
@@ -78,6 +104,17 @@ export function CatKnightPromptArticle() {
           character and prop continuity, slow-motion directions, sound design, and exclusions.
         </p>
         <CopyPrompt name="Cat Knight I — Infernal throne · full prompt" prompt={throneSeated} />
+      </section>
+
+      <section className="blog-section" aria-labelledby="outdoor-references">
+        <h2 id="outdoor-references">Outdoor references</h2>
+        <p>
+          These images belong to the earlier outdoor scenes. The silver-armored kitten supplies
+          the character identity; the grassland and stone bridge supply the environments. Use
+          them for those scenes separately from the throne prompt, which references Images 1–5 above.
+        </p>
+        <ImageGallery images={outdoorReferences} />
+        <ArticleImage {...stoneBridgeReference} />
       </section>
 
       <section className="blog-section" aria-labelledby="production-notes">

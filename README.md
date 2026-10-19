@@ -11,7 +11,7 @@ Personal site built with Next.js. Run `npm run dev`, `npm run typecheck`, and `n
 
 Article metadata lives in `src/data/posts.ts`. Each entry points to a React content component. Drafts appear only in local development and are excluded from production pages and the sitemap. Fill in the content and assets, update the publication date, and set `draft: false` when ready to publish.
 
-The published Cat Knight article is `src/components/CatKnightPromptArticle.tsx`. Its one selected complete English prompt lives in `src/data/catknight1-prompts.ts`; five original reference images live in `public/media/catknight1/`. Unpublished revisions are stored outside this public repository. Earlier Git commits may still contain previously published versions. Keep the existing `CopyPrompt` component: it includes the copy interaction and PostHog event.
+The published Cat Knight article is `src/components/CatKnightPromptArticle.tsx`. Its one selected complete English prompt lives in `src/data/catknight1-prompts.ts`; throne and outdoor reference images live in `public/media/catknight1/`. The throne prompt uses its five numbered images; the outdoor pack is a separate set. Unpublished revisions are stored outside this public repository. Earlier Git commits may still contain previously published versions. Keep the existing `CopyPrompt` component: it includes the copy interaction and PostHog event.
 
 ### Rich article content
 

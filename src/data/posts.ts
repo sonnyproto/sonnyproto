@@ -48,7 +48,7 @@ export const posts: readonly BlogPost[] = [
     section: "video",
     slug: "catknight1",
     title: "Cat Knight I — The Infernal Throne",
-    description: "A complete English prompt and five reference images for a wordless confrontation at an infernal throne.",
+    description: "A complete English throne-scene prompt, five numbered throne references, and an additional outdoor reference pack.",
     category: "AI Video",
     tags: ["AI Video", "Prompts"],
     publishedAt: "2026-10-19",
@@ -64,6 +64,7 @@ export const posts: readonly BlogPost[] = [
     contents: [
       { id: "reference-pack", label: "Reference pack" },
       { id: "throne-prompt", label: "Infernal throne prompt" },
+      { id: "outdoor-references", label: "Outdoor references" },
       { id: "production-notes", label: "Before you generate" }
     ],
     related: { href: "https://www.youtube.com/@sonnyproto", label: "More on YouTube" },
