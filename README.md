@@ -42,8 +42,8 @@ Put local files under `public/media/`; reference their URLs with `/media/` (with
 
 ### Instagram handoff
 
-- Comment keywords to configure in Business Suite: **CATKNIGHT** and **CAT KNIGHT**.
-- Video call to action: **Comment CATKNIGHT**.
+- Comment keyword to configure in Business Suite: **KNIGHT**.
+- Video call to action: **Comment KNIGHT**.
 - Campaign: `catknight` for the series entry point.
 - Link for the automatic reply:
   `https://sonnyproto.com/video-blog/catknight?utm_source=instagram&utm_medium=social&utm_campaign=catknight`
